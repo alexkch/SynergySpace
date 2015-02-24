@@ -44,7 +44,7 @@ header #home {
 header #account {
 	position: absolute;
     top: 0px; right: 0px;
-    text-align: center;
+    text-align: left;
 	background: #303E73;
 }
 
@@ -58,11 +58,9 @@ header ul {
 	margin: 0; padding: 0;
 	overflow: hidden;
 	max-height: 60px;
-	width: 150px;
 }
 header ul:hover {max-height: 500px;}
 
-header ul li {}
 header ul li a {
 	-moz-transition: background .3s ease;
     -webkit-transition: background .3s ease;
@@ -71,10 +69,10 @@ header ul li a {
 	line-height: 60px;
 	display: inline-block;
 	height: 60px;
-	width: 150px;
+	width: 175px;
 }
 header ul li a:hover {background: #111F50;}
-header ul li span {padding: 5px;}
+header ul li span {padding: 0 10px; text-align: left;}
 /**
  * Footer
  */
