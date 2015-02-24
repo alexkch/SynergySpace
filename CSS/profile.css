@@ -74,6 +74,7 @@ header ul li a {
 	width: 150px;
 }
 header ul li a:hover {background: #111F50;}
+header ul li span {padding: 5px;}
 /**
  * Footer
  */
