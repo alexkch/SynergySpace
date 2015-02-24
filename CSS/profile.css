@@ -1,3 +1,12 @@
+/**
+ * Global CSS Settings
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
     margin: 0; padding: 0;
     background: #fff;
@@ -5,17 +14,69 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+/**
+ * Header
+ */
 header {
     position: absolute;
     top: 0px; 
     left: 0px; right: 0px;
     background: #5C6896;
     color: #fff;
-    padding: 15px;
-    font-size: 25px;
+    height: 65px;
     border-bottom: 5px solid #eee;
 }
+header a {
+	color: #fff;
+	text-decoration: none;
+}
+header a:visited {color: #fff;}
+header #home {
+	font-size: 25px;
+	height: 65px;
+    padding: 12px;
+	display: inline-block;
+}
 
+/**
+ * Account Menu in Header
+ */
+header #account {
+	position: absolute;
+    top: 0px; right: 0px;
+    text-align: center;
+	background: #303E73;
+}
+
+header ul {
+	-moz-transition: max-height .3s ease;
+    -webkit-transition: max-height .3s ease;
+    -o-transition: max-height .3s ease;
+    transition: max-height .3s ease;
+	list-style: none;
+	font-size: 14px;
+	margin: 0; padding: 0;
+	overflow: hidden;
+	max-height: 60px;
+	width: 150px;
+}
+header ul:hover {max-height: 500px;}
+
+header ul li a {
+	-moz-transition: background .3s ease;
+    -webkit-transition: background .3s ease;
+    -o-transition: background .3s ease;
+    transition: background .3s ease;
+	padding: 20px 0;
+	display: inline-block;
+	height: 65px;
+	width: 150px;
+}
+header ul li a:hover {background: #111F50;}
+
+/**
+ * Footer
+ */
 footer {
     position: absolute;
     bottom: 0px; 
@@ -24,5 +85,5 @@ footer {
     color: #fff;
     text-align: center;
     padding: 15px;
-    font-size: 12px;
+    font-size: 13px;
 }
