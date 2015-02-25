@@ -31,11 +31,15 @@ header a {
 	text-decoration: none;
 }
 header a:visited {color: #fff;}
-header #home {
-	font-size: 25px;
-	height: 65px;
-    padding: 12px;
+header > a {
+	font-size: 20px;
+	height: 60px;
+    line-height: 60px;
 	display: inline-block;
+}
+header > a span {
+	vertical-align: middle;
+	padding: 0 5px 0 10px;
 }
 /**
  * Search
