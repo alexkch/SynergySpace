@@ -15,7 +15,7 @@
 		<a href="/index.php"><span id="home">SynergySpace</span></a>
 		<div id='search-box'>
 			<form action='/search' id='search-form' method='get' target='_top'>
-				<input id='search-text' name='q' placeholder='Search' type='text'/>
+				<input id='search-text' name='q' placeholder='Search by postal code' type='text' autocomplete="off"/>
 				<button id='search-button' type='submit'>                     
 					<span class="fa fa-search"></span>
 				</button>
@@ -31,7 +31,12 @@
 		</div>
 	</header>
 	<nav></nav>
-	<aside></aside>
+	<aside>
+		<a href=""><span class="fa fa-pencil"></span>Update Account Information</a>
+		<a href=""><span class="fa fa-unlock-alt"></span>Change Account Password</a>
+		<a href=""><span class="fa fa-user-secret"></span>Privacy Settings</a>
+		<a href=""><span class="fa fa-trash-o"></span>Delete Account</a>
+	</aside>
 	<section></section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>
