@@ -137,7 +137,7 @@ header ul li span {padding: 0 10px; text-align: left;}
  */
 section {
 	position: absolute;
-	left: 20%; right: 0;
+	left: 250px; right: 0;
 	top: 65px;
 	bottom: 45px;
 	background: #fff;
@@ -148,9 +148,10 @@ section {
  */
 aside {
 	position: absolute;
-	left: 0; right: 80%;
+	left: 0;
 	top: 65px;
 	bottom: 45px;
+	width: 250px;
 	background: #eee;
 }
 aside a {
