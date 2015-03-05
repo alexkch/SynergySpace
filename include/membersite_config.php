@@ -13,10 +13,10 @@ $fgmembersite->SetAdminEmail('bathalex210@gmail.com');
 //hostname, user name, password, database name and table name
 //note that the script will create the table (for example, fgusers in this case)
 //by itself on submitting register.php for the first time
-$fgmembersite->InitDB(/*hostname*/'ec2-50-19-249-214.compute-1.amazonaws.com',
-                      /*username*/'joblkqktbkwsnj',
-                      /*password*/'REyBIR2hC2G-vSSYBgud-hPlgf',
-                      /*database name*/'d4ppai3ve17g1b',
+$fgmembersite->InitDB(/*hostname*/'us-cdbr-iron-east-02.cleardb.net',
+                      /*username*/'b4792c8bf80f6e',
+                      /*password*/'0254f847',
+                      /*database name*/'heroku_4a908832174bf62',
                       /*table name*/'users');
 
 //For better security. Get a random string from this link: http://tinyurl.com/randstr
