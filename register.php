@@ -1,16 +1,3 @@
-
-<?PHP
-require_once("./include/membersite_config.php");
-
-if(isset($_POST['submitted']))
-{
-   if($fgmembersite->RegisterUser())
-   {
-        $fgmembersite->RedirectToURL("thank-you.html");
-   }
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,29 +51,7 @@ if(isset($_POST['submitted']))
 				<input type='submit' name='Submit' value='Submit' />	 
 			</fieldset>
 		</form>
-		<!-- client-side Form Validations:
-		Uses the excellent form validation script from JavaScript-coder.com-->
-
-		<script type='text/javascript'>
-		// <![CDATA[
-			var pwdwidget = new PasswordWidget('thepwddiv','password');
-			pwdwidget.MakePWDWidget();
-			
-			var frmvalidator  = new Validator("register");
-			frmvalidator.EnableOnPageErrorDisplay();
-			frmvalidator.EnableMsgsTogether();
-			frmvalidator.addValidation("name","req","Please provide your name");
-
-			frmvalidator.addValidation("email","req","Please provide your email address");
-
-			frmvalidator.addValidation("email","email","Please provide a valid email address");
-
-			frmvalidator.addValidation("username","req","Please provide a username");
-			
-			frmvalidator.addValidation("password","req","Please provide a password");
-
-		// ]]>
-		</script>
+		</form>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>
