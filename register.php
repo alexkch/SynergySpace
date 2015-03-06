@@ -13,9 +13,36 @@
 <script src="scripts/pwdwidget.js" type="text/javascript"></script>  <!-- Form validation JAVASCRIPT -->
 </head>
 <?php
+// Define database variables
+define('DB_HOST', 'ec2-107-20-244-39.compute-1.amazonaws.com');
+define('DB_NAME', 'ddn82pff17m8p9');
+define('DB_USER','vbbkmqgcbmprhj');
+define('DB_PASSWORD','hgtlv6g35Sn0zxepyM-f7JKqK6');
+
 // Connecting, selecting database
-$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
+$dbconn = pg_connect("host=DB_HOST dbname=DB_NAME user=DB_USER password=DB_PASSWORD")
     or die('Could not connect: ' . pg_last_error());
+
+function NewUser() { 
+	$fullname = $_POST['name']; 
+	$userName = $_POST['user']; 
+	$email = $_POST['email']; 
+	$password = $_POST['pass']; 
+	$query = "INSERT INTO users (fullname,userName,email,pass) VALUES ('$fullname','$userName','$email','$password')"; 
+	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
+	if($data) { echo "Registration completed."; }
+}
+
+function SignUp() { 
+	if(!empty($_POST['user'])) {
+		$query = pg_query("SELECT * FROM users WHERE username = '$_POST[user]'")
+			or die('Query failed: ' . pg_last_error()); 
+		if(!$row = pg_fetch_array($query,0) 
+			or die('Query failed: ' . pg_last_error())) { NewUser(); } 
+		else { echo "Sorry, that username is already taken."; } 
+	} 
+} 
+if(isset($_POST['submit'])) { SignUp(); }
 
 // Performing SQL query
 $query = 'SELECT * FROM users';
@@ -69,10 +96,10 @@ pg_close($dbconn);
 				<input type='text' name='email' id='email' maxlength="50" />
 				 
 				<label for='username' >UserName*:</label>
-				<input type='text' name='username' id='username' maxlength="50" />
+				<input type='text' name='user' id='user' maxlength="50" />
 				 
 				<label for='password' >Password*:</label>
-				<input type='password' name='password' id='password' maxlength="50" />
+				<input type='password' name='pass' id='pass' maxlength="50" />
 				<input type='submit' name='Submit' value='Submit' />	 
 			</fieldset>
 		</form>
