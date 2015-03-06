@@ -18,7 +18,7 @@ $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn8
 function SignIn() { 
 	session_start(); //starting the session for user profile page 
 	if(!empty($_POST['user'])) { 
-		$query = "SELECT * FROM logins WHERE userName = '$userName' AND password = md5('$password');";
+		$query = "SELECT * FROM users WHERE userName = '$userName' AND password = md5('$password');";
 		$result = pg_query($dbconn, $query);
 		if(pg_num_rows($result) != 1) {
 			echo "Login Failed!" . pg_num_rows($result);
