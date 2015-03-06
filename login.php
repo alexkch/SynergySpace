@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For MOBILE -->
-<title>Register - SynergySpace</title>
+<title>Login - SynergySpace</title>
 
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
@@ -15,25 +15,19 @@
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
 
-function NewUser() { 
-	$fullname = $_POST['name']; 
-	$userName = $_POST['user']; 
-	$email = $_POST['email']; 
-	$password = md5($_POST['pass']); 
-	$query = "INSERT INTO users (fullname,userName,email,pass) VALUES ('$fullname','$userName','$email','$password')"; 
-	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-	if($data) {echo "Registration completed.";}
-}
-
-function SignUp() { 
-	if(!empty($_POST['user'])) {
-		$query = pg_query("SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
-			or die('Query failed: ' . pg_last_error()); 
-		if(pg_num_rows($query) == 0) { NewUser(); } 
-		else {echo "Sorry, that username or email is already taken."; } 
+function SignIn() { 
+	session_start(); //starting the session for user profile page 
+	if(!empty($_POST['user'])) { 
+		$query = "SELECT * FROM logins WHERE userName = '$userName' AND password = md5('$password');";
+		$result = pg_query($dbconn, $query);
+		if(pg_num_rows($result) != 1) {
+			echo "Login Failed!";
+		} else {
+			echo "Login Successful!";
+		}
 	} 
-} 
-if(isset($_POST['submit'])) { SignUp(); }
+}
+if(isset($_POST['submit'])) {SignIn();}
 
 // Closing connection
 pg_close($dbconn);
@@ -59,24 +53,15 @@ pg_close($dbconn);
 		</div>
 	</header>
 	<section>
-		<form id='register' action='register.php' method='post' accept-charset='UTF-8'>
-			<fieldset >
-				<legend>Register</legend>
-				<input type='hidden' name='submitted' id='submitted' value='1'/>
-				<label for='name' >Your Full Name*: </label>
-				<input type='text' name='name' id='name' maxlength="50" />
-				<label for='email' >Email Address*:</label>
-				<input type='text' name='email' id='email' maxlength="50" />
-				 
-				<label for='username' >UserName*:</label>
-				<input type='text' name='user' id='user' maxlength="50" />
-				 
-				<label for='password' >Password*:</label>
-				<input type='password' name='pass' id='pass' maxlength="50" />
-				<input type='submit' name='submit' value='Submit' />	 
-			</fieldset>
-		</form>
-		</form>
+		<fieldset style="width:30%">
+			<legend>LOG-IN HERE</legend> 
+			<form method="POST" action="connectivity.php"> 
+				User <br>
+				<input type="text" name="user" size="40"><br>
+				Password <br><input type="password" name="pass" size="40"><br>
+				<input id="button" type="submit" name="submit" value="Log-In"> 
+			</form> 
+		</fieldset>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>
