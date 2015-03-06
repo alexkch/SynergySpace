@@ -29,7 +29,7 @@ function SignUp() {
 	if(!empty($_POST['user'])) {
 		$query = pg_query("SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
 			or die('Query failed: ' . pg_last_error()); 
-		if(!pg_num_rows($query) == 0) { NewUser(); } 
+		if(pg_num_rows($query) == 0) { NewUser(); } 
 		else {echo "Sorry, that username or email is already taken."; } 
 	} 
 } 
