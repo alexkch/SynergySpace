@@ -10,11 +10,8 @@
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
 </head>
 <?php
-// Define database variables
-define('DB_HOST', 'ec2-107-20-244-39.compute-1.amazonaws.com');
-define('DB_NAME', 'ddn82pff17m8p9');
-define('DB_USER','vbbkmqgcbmprhj');
-define('DB_PASSWORD','hgtlv6g35Sn0zxepyM-f7JKqK6');
+//Status Variable for footer information
+$status = '';
 
 // Connecting, selecting database
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
@@ -27,16 +24,16 @@ function NewUser() {
 	$password = $_POST['pass']; 
 	$query = "INSERT INTO users (fullname,userName,email,pass) VALUES ('$fullname','$userName','$email','$password')"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-	if($data) { echo "Registration completed."; }
+	if($data) {$status="Registration completed.";}
 }
 
 function SignUp() { 
 	if(!empty($_POST['user'])) {
-		$query = pg_query("SELECT * FROM users WHERE username = '$_POST[user]'")
+		$query = pg_query("SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
 			or die('Query failed: ' . pg_last_error()); 
 		if(!$row = pg_fetch_array($query,0) 
 			or die('Query failed: ' . pg_last_error())) { NewUser(); } 
-		else { echo "Sorry, that username is already taken."; } 
+		else {$status="Sorry, that username or email is already taken."; } 
 	} 
 } 
 if(isset($_POST['submit'])) { SignUp(); }
@@ -84,7 +81,9 @@ pg_close($dbconn);
 		</form>
 		</form>
 	</section>
-	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
+	<footer><span id="status"><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</span></footer>
 </body>
-
+<script>
+	document.getElementById("page").innerHTML = "<?php echo $status; ?>";
+</script>
 </html>
