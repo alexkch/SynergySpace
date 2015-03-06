@@ -21,9 +21,9 @@ function SignIn() {
 		$query = "SELECT * FROM logins WHERE userName = '$userName' AND password = md5('$password');";
 		$result = pg_query($dbconn, $query);
 		if(pg_num_rows($result) != 1) {
-			echo "Login Failed!";
+			echo "Login Failed!" . pg_num_rows($result);
 		} else {
-			echo "Login Successful!";
+			echo "Login Successful!" . pg_num_rows($result);
 		}
 	} 
 }
