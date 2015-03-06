@@ -2,7 +2,7 @@
  * Aside navigation
  */
 aside {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 65px;
 	bottom: 45px;
