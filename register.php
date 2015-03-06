@@ -82,8 +82,8 @@ pg_close($dbconn);
 		</form>
 	</section>
 	<footer><span id="status"><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</span></footer>
+	<script>
+		document.getElementById("page").innerHTML = "<?php echo $status; ?>";
+    </script>
 </body>
-<script>
-	document.getElementById("page").innerHTML = "<?php echo $status; ?>";
-</script>
 </html>
