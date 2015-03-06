@@ -47,15 +47,15 @@ pg_close($dbconn);
 			<ul>
 				<li><a href="/profile.html"><span class="fa fa-cogs"></span>My Account</a></li>
 				<li><a href="/register.php"><span class="fa fa-plus"></span>Create an Account</a></li>
-				<li><a href=""><span class="fa fa-sign-out"></span>Logout</a></li>
-				<li><a href=""><span class="fa fa-sign-in"></span>Login</a></li>
+				<li><a href="/login.php"><span class="fa fa-sign-out"></span>Logout</a></li>
+				<li><a href="/login.php"><span class="fa fa-sign-in"></span>Login</a></li>
 			</ul>
 		</div>
 	</header>
 	<section>
 		<fieldset style="width:30%">
 			<legend>LOG-IN HERE</legend> 
-			<form method="POST" action="connectivity.php"> 
+			<form method="POST" action="login.php"> 
 				User <br>
 				<input type="text" name="user" size="40"><br>
 				Password <br><input type="password" name="pass" size="40"><br>
