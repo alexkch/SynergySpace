@@ -19,8 +19,8 @@ function SignIn() {
 	$userName = $_POST['user']; 
 	$password = md5($_POST['pass']); 
 	if(!empty($_POST['user'])) { 
-		$query = "SELECT * FROM users WHERE username='$userName' AND pass='$password';";
-		$result = pg_query($dbconn, $query) or die('Query failed: ' . pg_last_error());
+		$query = "SELECT * FROM users WHERE username='$userName' AND pass='$password'";
+		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 		if(pg_num_rows($result) != 1) {
 			echo "Login Failed! For user: " . $userName . "/" . $password;
 		} else {
