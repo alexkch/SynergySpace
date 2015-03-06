@@ -79,7 +79,7 @@ pg_close($dbconn);
 				 
 				<label for='password' >Password*:</label>
 				<input type='password' name='pass' id='pass' maxlength="50" />
-				<input type='submit' name='Submit' value='Submit' />	 
+				<input type='submit' name='submit' value='Submit' />	 
 			</fieldset>
 		</form>
 		</form>
