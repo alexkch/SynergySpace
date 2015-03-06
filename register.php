@@ -10,8 +10,6 @@
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
 </head>
 <?php
-//Status Variable for footer information
-$status = '';
 
 // Connecting, selecting database
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
@@ -24,16 +22,15 @@ function NewUser() {
 	$password = $_POST['pass']; 
 	$query = "INSERT INTO users (fullname,userName,email,pass) VALUES ('$fullname','$userName','$email','$password')"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-	if($data) {$status="Registration completed.";}
+	if($data) {echo "Registration completed.";}
 }
 
 function SignUp() { 
 	if(!empty($_POST['user'])) {
 		$query = pg_query("SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
 			or die('Query failed: ' . pg_last_error()); 
-		if(!$row = pg_fetch_array($query,0) 
-			or die('Query failed: ' . pg_last_error())) { NewUser(); } 
-		else {$status="Sorry, that username or email is already taken."; } 
+		if(!pg_num_rows($query) == 0) { NewUser(); } 
+		else {echo "Sorry, that username or email is already taken."; } 
 	} 
 } 
 if(isset($_POST['submit'])) { SignUp(); }
@@ -81,9 +78,6 @@ pg_close($dbconn);
 		</form>
 		</form>
 	</section>
-	<footer><span id="status"><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</span></footer>
-	<script>
-		document.getElementById("page").innerHTML = "<?php echo $status; ?>";
-    </script>
+	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>
 </html>
