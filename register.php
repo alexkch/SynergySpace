@@ -8,9 +8,6 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
-
-<link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" /> <!-- Form validation CSS -->
-<script src="scripts/pwdwidget.js" type="text/javascript"></script>  <!-- Form validation JAVASCRIPT -->
 </head>
 <?php
 // Define database variables
