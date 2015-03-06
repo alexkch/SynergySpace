@@ -22,9 +22,11 @@ function SignIn() {
 		$query = "SELECT * FROM users WHERE username='$userName' AND pass='$password'";
 		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 		if(pg_num_rows($result) != 1) {
-			echo "Login Failed! For user: " . $userName . "/" . $password;
+			echo "Login Failed! For user: " . $userName;
 		} else {
 			echo "Login Successful!" . pg_num_rows($result);
+			session_start();
+			$_SESSION['username'] = $userName; 
 		}
 	} 
 }
