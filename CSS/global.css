@@ -78,7 +78,7 @@ header > a span {
 }
 
 #search-button {
-	position: fixed;
+	position: absolute;
 	top: 1px;
 	right: 1px;
 	height: 28px;
