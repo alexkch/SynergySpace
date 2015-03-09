@@ -11,14 +11,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<script type="text/javascript" async>
-	$(function() { //Document Ready Function
-		if(window.location.hash.localeCompare("#user=")==0) {
-			var username = window.location.hash.split("=")[1];
-			document.getElementById('user').value=username;
-		}
-	});
-</script>
+<script type="text/javascript" src="src/login.js"async></script>
 </head>
 <?php
 

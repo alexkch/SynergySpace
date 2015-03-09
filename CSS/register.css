@@ -31,6 +31,11 @@ section form input[type="text"], section form input[type="password"] {
 	padding: 0 5px;
 	margin: 10px 10%;
 }
+section form input[type="radio"] {
+	margin: 20px 20px 40px;
+	width: 20px;
+	height: 20px;
+}
 section form input[type="submit"] {
 	display: block;
 	margin: 0 auto;
