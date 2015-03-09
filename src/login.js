@@ -1,6 +1,9 @@
 	$(function() { //Document Ready Function
-		if(window.location.hash.indexOf("#user=")==0) {
+		var hash = window.location.hash;
+		if(hash.indexOf("#user=")==0) {
 			var username = window.location.hash.split("=")[1];
 			document.getElementById('user').value=username;
+		} else if (hash.indexOf("#loggedout")==0) {
+			alert("Logged out successfully.");
 		}
 	});
