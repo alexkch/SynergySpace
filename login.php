@@ -15,7 +15,16 @@
 <script type="text/javascript" src="src/login.js"async></script>
 </head>
 <?php
+/**
+ * This page will loge users out if they are logged in by destroying session data.
+ * After which, a user can login and be redirected to their profile.
+*/
 
+session_start(); // Start PHP session to test if user is logged in.
+$username = $_SESSION['username'];
+if (isset($username) || !empty($username)) { //Logged in
+	session_destroy(); // Delete all data associated with user
+}
 // Connecting, selecting database
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
@@ -31,7 +40,7 @@ function SignIn() {
 		} else { //Logged in
 			session_start();
 			$_SESSION['username'] = $userName;
-			header("Location: http://synergyspace309.herokuapp.com/profile.php");
+			header("Location: http://synergyspace309.herokuapp.com/profile.php"); //Redirect to Profile
 			die();			
 		}
 	} 
