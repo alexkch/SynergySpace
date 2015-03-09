@@ -11,14 +11,15 @@ CREATE TABLE users (
   password varchar NOT NULL,
   name varchar NOT NULL,
   email varchar NOT NULL,
-  type char NOT NULL
+  type char NOT NULL,
   occupation varchar NOT NULL,
   birthdate varchar NOT NULL,
   gender varchar NOT NULL,
   homeaddress varchar NOT NULL,
   phonenumber varchar NOT NULL,
-  UNIQUE (username, password),  
-);
+  UNIQUE (username, password),
+  UNIQUE (email)  
+) ;
 
 CREATE TABLE building (
   b_id integer PRIMARY KEY,
@@ -28,36 +29,53 @@ CREATE TABLE building (
   country varchar NOT NULL,
   capacity integer NOT NULL,
   worknumber varchar NOT NULL,
-  UNIQUE (address, city, country),
-  FOREIGN KEY (n_id) REFERENCES network, 
+  UNIQUE (address, city, country) 
 ) ;
 
 CREATE TABLE feedback (
   f_id integer PRIMARY KEY,
   b_id integer NOT NULL REFERENCES people,
-  u_id as subject integer NOT NULL,
-  u_id as rater integer NOT NULL,
+  subject integer NOT NULL,
+  rater integer NOT NULL,
   feedback_rating integer NOT NULL,
   comments varchar NOT NULL,
-
   FOREIGN KEY (b_id) REFERENCES building,
-  FOREIGN KEY (subject, rater) REFERENCES user, 
+  FOREIGN KEY (subject) REFERENCES user(u_id),
+  FOREIGN KEY (rater) REFERENCES user(u_id) 
 ) ;
 
 CREATE TABLE buildingrating (
   r_id integer PRIMARY KEY,
-  b_id integer NOT NULL REFERENCES building,
-  u_id varchar NOT NULL REFERENCES user,  
+  b_id integer NOT NULL,
+  u_id varchar NOT NULL,  
   building_rating integer NOT NULL,
   comments varchar NOT NULL,
-
   FOREIGN KEY (b_id) REFERENCES building,
-  FOREIGN KEY (u_id) REFERENCES u_id, 
+  FOREIGN KEY (u_id) REFERENCES u_id
 ) ;
 
+CREATE TABLE network (
+  n_id integer NOT NULL,
+  u_id integer NOT NULL REFERENCES user, 
+  PRIMARY KEY (n_id, u_id)
+) ;
 
+CREATE TABLE owns (
+  owner integer NOT NULL REFERENCES user(u_id),
+  b_id integer NOT NULL REFERENCES building,
+  PRIMARY KEY (owner, b_id)
+) ;
 
+CREATE TABLE renting (
+  tenant integer NOT NULL REFERENCES user(u_id),
+  b_id integer NOT NULL REFERENCES building
+) ;
 
-
+CREATE TABLE listed (
+  b_id integer NOT NULL REFERENCES building,
+  owner integer NOT NULL REFERENCES user(u_id),
+  startprice integer NOT NULL,
+  termlength integer NOT NULL
+) ;
 
 
