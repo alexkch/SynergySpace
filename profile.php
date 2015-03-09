@@ -13,7 +13,7 @@
 <?php
 session_start(); // Start PHP session to test if user is logged in.
 $username = $_SESSION['username'];
-if (!isset(username) || empty(username)) {
+if (!isset($username) || empty($username)) {
       // They are not logged in. Redirect to login page with error.
 	  header("Location: http://synergyspace309.herokuapp.com/login.php#error");
       die();
