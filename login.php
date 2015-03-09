@@ -8,6 +8,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
+<link rel="stylesheet" type="text/css" href="CSS/login.css"> <!-- Global CSS Styling -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -60,15 +61,14 @@ pg_close($dbconn);
 		</div>
 	</header>
 	<section>
-		<fieldset style="width:30%">
-			<legend>LOG-IN HERE</legend> 
-			<form method="POST" action="login.php"> 
-				User <br>
-				<input type="text" name="user" size="40"><br>
-				Password <br><input type="password" name="pass" size="40"><br>
+		<form method="POST" action="login.php"> 
+			<fieldset>
+				<legend>LOG-IN</legend> 
+				<input type="text" name="user" id="user" size="20" placeholder="Username"><br>
+				<input type="password" name="pass" size="20" placeholder="Password"><br>
 				<input id="button" type="submit" name="submit" value="Log-In"> 
-			</form> 
-		</fieldset>
+			</fieldset>
+		</form> 
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>
