@@ -8,50 +8,25 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
-<link rel="stylesheet" type="text/css" href="CSS/register.css"> <!-- Register CSS Styling -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-<script type="text/javascript" async>
-	$(function() { //Document Ready Function
-		if(window.location.hash.localeCompare("#error=useremail")==0) {
-			alert("That email or username is already in use. Please try another.");
-		}
-	});
-</script>
+<link rel="stylesheet" type="text/css" href="CSS/register.css"> <!-- Delete CSS Styling -->
 </head>
 <?php
-
 // Connecting, selecting database
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
 
-function NewUser() { 
-	$fullname = $_POST['name']; 
+function deleteUser() { 
 	$userName = $_POST['user']; 
-	$email = $_POST['email']; 
-	$password = md5($_POST['pass']); 
-	$type = $_POST['type']; 
-	$query = "INSERT INTO users (username,password,name,email,type) VALUES ('$userName','$password','$fullname','$email','$type')"; 
+	$password = md5($_POST['pass']);  
+	$query = "DELETE FROM users WHERE username='$userName' AND password='$password'"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-	if($data) { //Registration successful
-		header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
+	if($data) { //Deletion successful
+		header("Location: http://synergyspace309.herokuapp.com/index.php#deleted=".$userName);
         die();
 	}
 }
 
-function SignUp() { 
-	if(!empty($_POST['user'])) {
-		$query = pg_query("SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
-			or die('Query failed: ' . pg_last_error()); 
-		if(pg_num_rows($query) == 0) { NewUser(); } 
-		else {//Username or Email taken
-			header("Location: http://synergyspace309.herokuapp.com/register.php#error=".useremail);
-            die();
-		} 
-	} 
-} 
-if(isset($_POST['submit'])) { SignUp(); }
+if(isset($_POST['submit'])) {deleteUser();}
 
 // Closing connection
 pg_close($dbconn);
@@ -81,16 +56,12 @@ pg_close($dbconn);
 		</div>
 	</header>
 	<section>
-		<form id='register' action='register.php' method='post' accept-charset='UTF-8'>
+		<form id='register' action='delete.php' method='post' accept-charset='UTF-8'>
 			<fieldset >
 				<legend>Register</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
-				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
-				<input type='text' name='email' id='email' maxlength="50" placeholder="Email"/>
 				<input type='text' name='user' id='user' maxlength="20" placeholder="Username"/>
 				<input type='password' name='pass' id='pass' maxlength="20" placeholder="Password"/>
-				<input type="radio" name="type" value="tenant">Tenant
-				<input type="radio" name="type" value="leaser">Leaser
 				<input type='submit' name='submit' value='Submit' />	 
 			</fieldset>
 		</form>

@@ -57,7 +57,7 @@ $username = $_SESSION['username'];
 		<a href=""><span class="fa fa-pencil"></span>Update Account Information</a>
 		<a href=""><span class="fa fa-unlock-alt"></span>Change Account Password</a>
 		<a href=""><span class="fa fa-user-secret"></span>Privacy Settings</a>
-		<a href=""><span class="fa fa-trash-o"></span>Delete Account</a>
+		<a href="/delete.php"><span class="fa fa-trash-o"></span>Delete Account</a>
 	</aside>
 	<section></section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
