@@ -56,9 +56,9 @@ pg_close($dbconn);
 		</div>
 	</header>
 	<section>
-		<form id='register' action='delete.php' method='post' accept-charset='UTF-8'>
+		<form id='register' action='delete.php' method='post' accept-charset='UTF-8' onsubmit="return confirm('Are you sure you want to delete your account?');>
 			<fieldset >
-				<legend>Register</legend>
+				<legend>Delete Account</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='text' name='user' id='user' maxlength="20" placeholder="Username"/>
 				<input type='password' name='pass' id='pass' maxlength="20" placeholder="Password"/>
