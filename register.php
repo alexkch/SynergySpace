@@ -86,7 +86,7 @@ pg_close($dbconn);
 				<legend>Register</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
-				<input type='text' name='email' id='email' maxlength="20" placeholder="Email"/>
+				<input type='text' name='email' id='email' maxlength="50" placeholder="Email"/>
 				<input type='text' name='user' id='user' maxlength="20" placeholder="Username"/>
 				<input type='password' name='pass' id='pass' maxlength="20" placeholder="Password"/>
 				<input type="radio" name="type" value="tenant">Tenant
