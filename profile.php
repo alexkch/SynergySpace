@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
 <link rel="stylesheet" type="text/css" href="CSS/profile.css"> <!-- Profile CSS Styling -->
 </head>
-<?php @ require_once ('functions/menu.php'); ?>
+<?php include 'functions/menu.php'; ?>
 <?php
 session_start(); // Start PHP session to test if user is logged in.
 $username = $_SESSION['username'];
