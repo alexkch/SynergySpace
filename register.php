@@ -31,7 +31,8 @@ function NewUser() {
 	$userName = $_POST['user']; 
 	$email = $_POST['email']; 
 	$password = md5($_POST['pass']); 
-	$query = "INSERT INTO users (fullname,userName,email,pass) VALUES ('$fullname','$userName','$email','$password')"; 
+	$type = $_POST['type']; 
+	$query = "INSERT INTO users (username,password,name,email,type) VALUES ('$userName','$password','$fullname','$email','$type')"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 	if($data) { //Registration successful
 		header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
@@ -84,6 +85,8 @@ pg_close($dbconn);
 				<input type='text' name='email' id='email' maxlength="20" placeholder="Email"/>
 				<input type='text' name='user' id='user' maxlength="20" placeholder="Username"/>
 				<input type='password' name='pass' id='pass' maxlength="20" placeholder="Password"/>
+				<input type="radio" name="type" value="tenant">Tenant
+				<input type="radio" name="type" value="leaser">Leaser
 				<input type='submit' name='submit' value='Submit' />	 
 			</fieldset>
 		</form>

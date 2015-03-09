@@ -6,26 +6,23 @@ SET search_path TO synergy;
 
 
 CREATE TABLE users (
-  username varchar(32) REFERENCES profile PRIMARY KEY NOT NULL,
+  username varchar(32) PRIMARY KEY NOT NULL,
   password varchar(32) NOT NULL,
   name varchar(32) NOT NULL,
   email varchar(32) NOT NULL,
-  tenant boolean NOT NULL,
-  leaser boolean NOT NULL
+  type char(6) NOT NULL
 );
 
 
 CREATE TABLE profile (
-  p_id integer PRIMARY KEY,
-  firstname varchar NOT NULL,
-  lastname varchar NOT NULL,
-  occupation varchar NOT NULL,
-  birthdate varchar NOT NULL,
-  gender varchar NOT NULL,
-  homeaddress varchar NOT NULL,
-  homenumber varchar NOT NULL,
-  cellnumber varchar NOT NULL
-) ;
+  username varchar(32) REFERENCES users PRIMARY KEY,
+  occupation varchar(32) NOT NULL,
+  birthdate varchar(32) NOT NULL,
+  gender varchar(32) NOT NULL,
+  homeaddress varchar(32) NOT NULL,
+  homenumber varchar(32) NOT NULL,
+  cellnumber varchar(32) NOT NULL
+);
 
 CREATE TABLE building (
   b_id integer PRIMARY KEY,
