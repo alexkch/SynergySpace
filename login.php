@@ -8,6 +8,17 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script type="text/javascript" async>
+	$(function() { //Document Ready Function
+		if(window.location.hash.localeCompare("#user=")==0) {
+			var username = window.location.hash.split("=")[1];
+			document.getElementById('user').value=username;
+		}
+	});
+</script>
 </head>
 <?php
 

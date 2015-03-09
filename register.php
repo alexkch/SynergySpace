@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
 <link rel="stylesheet" type="text/css" href="CSS/register.css"> <!-- Register CSS Styling -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script type="text/javascript" async>
+	$(function() { //Document Ready Function
+		if(window.location.hash.localeCompare("#error=useremail")==0) {
+			alert("That email or username is already in use. Please try another.");
+		}
+	});
+</script>
 </head>
 <?php
 
@@ -23,7 +33,10 @@ function NewUser() {
 	$password = md5($_POST['pass']); 
 	$query = "INSERT INTO users (fullname,userName,email,pass) VALUES ('$fullname','$userName','$email','$password')"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-	if($data) {echo "Registration completed.";}
+	if($data) { //Registration successful
+		header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
+        die();
+	}
 }
 
 function SignUp() { 
@@ -31,7 +44,10 @@ function SignUp() {
 		$query = pg_query("SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
 			or die('Query failed: ' . pg_last_error()); 
 		if(pg_num_rows($query) == 0) { NewUser(); } 
-		else {echo "Sorry, that username or email is already taken."; } 
+		else {//Username or Email taken
+			header("Location: http://synergyspace309.herokuapp.com/register.php#error=".useremail);
+            die();
+		} 
 	} 
 } 
 if(isset($_POST['submit'])) { SignUp(); }
@@ -64,16 +80,10 @@ pg_close($dbconn);
 			<fieldset >
 				<legend>Register</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
-				<label for='name' >Your Full Name*: </label>
-				<input type='text' name='name' id='name' maxlength="50" />
-				<label for='email' >Email Address*:</label>
-				<input type='text' name='email' id='email' maxlength="50" />
-				 
-				<label for='username' >UserName*:</label>
-				<input type='text' name='user' id='user' maxlength="50" />
-				 
-				<label for='password' >Password*:</label>
-				<input type='password' name='pass' id='pass' maxlength="50" />
+				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
+				<input type='text' name='email' id='email' maxlength="20" placeholder="Email"/>
+				<input type='text' name='user' id='user' maxlength="20" placeholder="Username"/>
+				<input type='password' name='pass' id='pass' maxlength="20" placeholder="Password"/>
 				<input type='submit' name='submit' value='Submit' />	 
 			</fieldset>
 		</form>
