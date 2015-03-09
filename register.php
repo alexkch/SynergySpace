@@ -71,7 +71,7 @@ pg_close($dbconn);
 			<ul>
 				<?php
 					include 'functions/menu.php';
-					if (isset($username)) {
+					if (isset($_SESSION['username'])) {
 						userMenu();
 					} else {
 						defaultMenu();

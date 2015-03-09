@@ -43,7 +43,7 @@ $username = $_SESSION['username'];
 			<ul>
 				<?php
 					include 'functions/menu.php';
-					if (isset($username)) {
+					if (isset($_SESSION['username'])) {
 						userMenu();
 					} else {
 						defaultMenu();
