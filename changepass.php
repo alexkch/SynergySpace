@@ -75,7 +75,7 @@ pg_close($dbconn);
 		</div>
 	</header>
 	<section>
-		<form id='register' action='changepass.php' method='post' accept-charset='UTF-8' onsubmit="return confirm('Are you sure you want to change your password?');">
+		<form id='register' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method='post' accept-charset='UTF-8' onsubmit="return confirm('Are you sure you want to change your password?');">
 			<fieldset >
 				<legend><span class="fa fa-pencil fa-2x"></span>Change Password</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>

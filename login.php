@@ -30,9 +30,6 @@ if (isset($username) || !empty($username)) { //Logged in
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
 
-//Global error variable, fill with most recent error.	
-$error="";
-
 function SignIn() {
 	$userName = $_POST['user']; 
 	$password = md5($_POST['pass']); 
@@ -40,7 +37,7 @@ function SignIn() {
 		$query = "SET search_path TO synergy; SELECT * FROM synergy.users WHERE username='$userName' AND password='$password'";
 		$result = pg_query($query) or die('Server error. Please try reloading <a href="http://synergyspace309.herokuapp.com/login.php">the login page</a>.');
 		if(pg_num_rows($result) != 1) {
-			$error="Username or password incorrect.";
+			displayNote("Username or password incorrect.");
 		} else { //Logged in
 			session_start();
 			$_SESSION['username'] = $userName;
@@ -79,10 +76,10 @@ pg_close($dbconn);
 		</div>
 	</header>
 	<section>
-		<form method="POST" action="login.php"> 
+		<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 			<fieldset>
 				<legend><span class="fa fa-sign-in fa-2x"></span>LOG-IN</legend>
-				<span id="notification"><?php  if (!empty($error)) {echo $error;}?></span>
+				<span id="notification"><?php function displayNote($note) {echo $note;}?></span>
 				<input type="text" name="user" id="user" size="20" placeholder="Username"><br>
 				<input type="password" name="pass" size="20" placeholder="Password"><br>
 				<input id="button" type="submit" name="submit" value="Log-In"> 

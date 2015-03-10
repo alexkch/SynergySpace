@@ -81,7 +81,7 @@ pg_close($dbconn);
 		</div>
 	</header>
 	<section>
-		<form id='register' action='register.php' method='post' accept-charset='UTF-8'>
+		<form id='register' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post' accept-charset='UTF-8'>
 			<fieldset >
 				<legend><span class="fa fa-plus fa-2x"></span>Register</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
