@@ -10,9 +10,9 @@ CREATE TABLE users (
   password varchar NOT NULL,
   name varchar NOT NULL,
   email varchar NOT NULL,
-  type char(6) NOT NULL,
+  type varchar(6) NOT NULL,
   occupation varchar,
-  birthdate varchar,
+  birthdate varchar(10),
   gender varchar,
   homeaddress varchar,
   phonenumber varchar,
@@ -33,48 +33,50 @@ CREATE TABLE building (
 
 CREATE TABLE feedback (
   f_id integer PRIMARY KEY,
-  b_id integer NOT NULL REFERENCES people,
+  b_id integer NOT NULL REFERENCES building,
   subject varchar NOT NULL,
   rater varchar NOT NULL,
   feedback_rating integer NOT NULL,
   comments varchar NOT NULL,
   FOREIGN KEY (b_id) REFERENCES building,
   FOREIGN KEY (subject) REFERENCES users(username),
-  FOREIGN KEY (rater) REFERENCES users(usename) 
+  FOREIGN KEY (rater) REFERENCES users(username) 
 ) ;
 
 CREATE TABLE buildingrating (
   r_id integer PRIMARY KEY,
   b_id integer NOT NULL,
-  u_id varchar NOT NULL,  
+  username varchar NOT NULL,  
   building_rating integer NOT NULL,
   comments varchar NOT NULL,
   FOREIGN KEY (b_id) REFERENCES building,
-  FOREIGN KEY (u_id) REFERENCES users(usename)
+  FOREIGN KEY (username) REFERENCES users
 ) ;
 
 CREATE TABLE network (
   n_id integer NOT NULL,
-  u_id integer NOT NULL REFERENCES users(username), 
-  PRIMARY KEY (n_id, u_id)
+  username varchar NOT NULL REFERENCES users, 
+  PRIMARY KEY (n_id, username)
 ) ;
 
 CREATE TABLE owns (
-  owner integer NOT NULL REFERENCES users(username),
+  owner varchar NOT NULL REFERENCES users,
   b_id integer NOT NULL REFERENCES building,
   PRIMARY KEY (owner, b_id)
 ) ;
 
 CREATE TABLE renting (
-  tenant integer NOT NULL REFERENCES users(username),
-  b_id integer NOT NULL REFERENCES building
+  tenant varchar NOT NULL REFERENCES users,
+  b_id integer NOT NULL REFERENCES building,
+  PRIMARY KEY (tenant, b_id)
 ) ;
 
 CREATE TABLE listed (
   b_id integer NOT NULL REFERENCES building,
-  owner integer NOT NULL REFERENCES users(username),
+  owner varchar NOT NULL REFERENCES users,
   startprice integer NOT NULL,
-  termlength integer NOT NULL
+  termlength integer NOT NULL,
+  PRIMARY KEY (b_id, owner)
 ) ;
 
 
