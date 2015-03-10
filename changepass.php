@@ -32,8 +32,8 @@ function updateUser() {
 			$query = "SET search_path TO synergy; UPDATE users SET password=md5('$newPass') WHERE password=md5('$oldPass') AND username='$username'"; 
 			$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 			if($data) { //Pass Change successful
-				session_destroy(); // Delete all data associated with user
 				header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$username);
+				session_destroy(); // Delete all data associated with user
 				die();
 			}
 		} else { // New pass is same as old
