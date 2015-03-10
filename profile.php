@@ -21,7 +21,7 @@ if (!isset($username) || empty($username)) {
 	$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
 		or die('Could not connect: ' . pg_last_error());
 	
-	$query = "SELECT * FROM users WHERE username='$username'";
+	$query = "SET search_path TO synergy; SELECT * FROM users WHERE username='$username'";
 	$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 	// We need to parse $result to get user information and fill this page.
 }

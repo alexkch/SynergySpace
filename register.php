@@ -32,7 +32,7 @@ function NewUser() {
 	$email = $_POST['email']; 
 	$password = md5($_POST['pass']); 
 	$type = $_POST['type']; 
-	$query = "INSERT INTO users (username,password,name,email,type) VALUES ('$userName','$password','$fullname','$email','$type')"; 
+	$query = "SET search_path TO synergy; INSERT INTO users (username,password,name,email,type) VALUES ('$userName','$password','$fullname','$email','$type')"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 	if($data) { //Registration successful
 		header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
