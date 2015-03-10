@@ -15,7 +15,7 @@ CREATE TABLE users (
   birthdate varchar(10),
   gender varchar,
   homeaddress varchar,
-  phonenumber varchar,
+  phonenumber integer,
   UNIQUE (username, password),
   UNIQUE (email)  
 ) ;
@@ -60,20 +60,20 @@ CREATE TABLE network (
 ) ;
 
 CREATE TABLE owns (
-  owner varchar NOT NULL REFERENCES users,
+  owner varchar NOT NULL REFERENCES users(username),
   b_id integer NOT NULL REFERENCES building,
   PRIMARY KEY (owner, b_id)
 ) ;
 
 CREATE TABLE renting (
-  tenant varchar NOT NULL REFERENCES users,
+  username varchar NOT NULL REFERENCES users,
   b_id integer NOT NULL REFERENCES building,
-  PRIMARY KEY (tenant, b_id)
+  PRIMARY KEY (username, b_id)
 ) ;
 
 CREATE TABLE listed (
   b_id integer NOT NULL REFERENCES building,
-  owner varchar NOT NULL REFERENCES users,
+  owner varchar NOT NULL REFERENCES users(username),
   startprice integer NOT NULL,
   termlength integer NOT NULL,
   PRIMARY KEY (b_id, owner)
