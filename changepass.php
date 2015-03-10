@@ -30,9 +30,9 @@ function deleteUser() {
 	if (strcmp($newPass, $newPassConf)==0) {
 		$query = "SET search_path TO synergy; UPDATE users SET password='$newPass' WHERE password='$oldPass'"; 
 		$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-		if($data) { //Deletion successful
+		if($data) { //Pass Change successful
 			session_destroy(); // Delete all data associated with user
-			header("Location: http://synergyspace309.herokuapp.com/index.php#deleted=".$userName);
+			header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
 			die();
 		}
 	} else {
@@ -72,7 +72,7 @@ pg_close($dbconn);
 	<section>
 		<form id='register' action='changepass.php' method='post' accept-charset='UTF-8' onsubmit="return confirm('Are you sure you want to change your password?');">
 			<fieldset >
-				<legend><span class="fa fa-trash fa-2x"></span>Change Password</legend>
+				<legend><span class="fa fa-pencil fa-2x"></span>Change Password</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='text' name='old' id='old' maxlength="20" placeholder="Old Password"/>
 				<input type='password' name='pass' id='pass' maxlength="20" placeholder="New Password"/>
