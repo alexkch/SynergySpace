@@ -59,7 +59,18 @@ $username = $_SESSION['username'];
 		<a href=""><span class="fa fa-user-secret"></span>Privacy Settings</a>
 		<a href="/delete.php"><span class="fa fa-trash-o"></span>Delete Account</a>
 	</aside>
-	<section></section>
+	<section>
+	<div id="gradient"></div>
+<div id="card">
+		<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c0.0.160.160/p160x160/10690125_757073407667986_4519955383896243899_n.jpg?oh=e257227f21b2fcb0968537e017505b3a&amp;oe=55799810&amp;__gda__=1438501255_c60f97922345625eb33199e96fde4c2d">
+		<h2>Kevin Bath</h2>
+		<p id="occupation">Web Developer</p>
+		<p id="burthdate">June 28, 19994</p>
+		<p id="gender">Male</p>
+		<span id="homeaddress" class="left bottom">111 St George St</span>
+		<span id="phonenumber" class="right bottom">(416) 770-6583</span>
+	</div>
+	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>
 
