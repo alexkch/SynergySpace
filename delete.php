@@ -28,6 +28,7 @@ function deleteUser() {
 	$query = "SET search_path TO synergy; DELETE FROM users WHERE username='$userName' AND password='$password'"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 	if($data) { //Deletion successful
+	    session_destroy(); // Delete all data associated with user
 		header("Location: http://synergyspace309.herokuapp.com/index.php#deleted=".$userName);
         die();
 	}
