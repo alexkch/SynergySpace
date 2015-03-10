@@ -6,17 +6,16 @@ SET search_path TO synergy;
 
 
 CREATE TABLE users (
-  u_id integer PRIMARY KEY,
-  username varchar NOT NULL,
+  username varchar PRIMARY KEY NOT NULL,
   password varchar NOT NULL,
   name varchar NOT NULL,
   email varchar NOT NULL,
   type char NOT NULL,
-  occupation varchar NOT NULL,
-  birthdate varchar NOT NULL,
-  gender varchar NOT NULL,
-  homeaddress varchar NOT NULL,
-  phonenumber varchar NOT NULL,
+  occupation varchar,
+  birthdate varchar,
+  gender varchar,
+  homeaddress varchar,
+  phonenumber varchar,
   UNIQUE (username, password),
   UNIQUE (email)  
 ) ;
@@ -35,13 +34,13 @@ CREATE TABLE building (
 CREATE TABLE feedback (
   f_id integer PRIMARY KEY,
   b_id integer NOT NULL REFERENCES people,
-  subject integer NOT NULL,
-  rater integer NOT NULL,
+  subject varchar NOT NULL,
+  rater varchar NOT NULL,
   feedback_rating integer NOT NULL,
   comments varchar NOT NULL,
   FOREIGN KEY (b_id) REFERENCES building,
-  FOREIGN KEY (subject) REFERENCES user(u_id),
-  FOREIGN KEY (rater) REFERENCES user(u_id) 
+  FOREIGN KEY (subject) REFERENCES users(username),
+  FOREIGN KEY (rater) REFERENCES users(usename) 
 ) ;
 
 CREATE TABLE buildingrating (
@@ -51,29 +50,29 @@ CREATE TABLE buildingrating (
   building_rating integer NOT NULL,
   comments varchar NOT NULL,
   FOREIGN KEY (b_id) REFERENCES building,
-  FOREIGN KEY (u_id) REFERENCES u_id
+  FOREIGN KEY (u_id) REFERENCES users(usename)
 ) ;
 
 CREATE TABLE network (
   n_id integer NOT NULL,
-  u_id integer NOT NULL REFERENCES user, 
+  u_id integer NOT NULL REFERENCES users(username), 
   PRIMARY KEY (n_id, u_id)
 ) ;
 
 CREATE TABLE owns (
-  owner integer NOT NULL REFERENCES user(u_id),
+  owner integer NOT NULL REFERENCES users(username),
   b_id integer NOT NULL REFERENCES building,
   PRIMARY KEY (owner, b_id)
 ) ;
 
 CREATE TABLE renting (
-  tenant integer NOT NULL REFERENCES user(u_id),
+  tenant integer NOT NULL REFERENCES users(username),
   b_id integer NOT NULL REFERENCES building
 ) ;
 
 CREATE TABLE listed (
   b_id integer NOT NULL REFERENCES building,
-  owner integer NOT NULL REFERENCES user(u_id),
+  owner integer NOT NULL REFERENCES users(username),
   startprice integer NOT NULL,
   termlength integer NOT NULL
 ) ;
