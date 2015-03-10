@@ -31,7 +31,7 @@ function updateUser() {
 	if (strcmp($newPass, $newPassConf)==0) {
 		$userQuery = "SET search_path TO synergy; SELECT password FROM users WHERE username='$user' AND password=md5('$oldPass');";
 		$dataPass = pg_query($userQuery) or die('Query failed: ' . pg_last_error());
-		if ($dataPass) { // Testing user credentials
+		if (strcmp(pg_fetch_object($dataPass)->password,$oldPass)==0) { // Testing user credentials
 			if (strcmp($newPass, $oldPass)!=0) { // Ensure setting NEW pass
 				$query = "SET search_path TO synergy; UPDATE users SET password=md5('$newPass') WHERE password=md5('$oldPass') AND username='$user';"; 
 				$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
