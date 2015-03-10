@@ -34,7 +34,7 @@ function updateUser() {
 			if(pg_result_status($data) == PGSQL_COMMAND_OK) { //Pass Change successful
 				session_destroy(); //Log out
 				//Go to log-in page, with note 2: 'Account password changed successfully.'
-				header("Location: http://synergyspace309.herokuapp.com/login.php#note=2");
+				header("Location: http://synergyspace309.herokuapp.com/login.php#note=2&newpass=".$newPass);
 				die();
 			}
 		} else { // New pass is same as old
