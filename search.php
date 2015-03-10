@@ -12,6 +12,7 @@
 
 <!-- EXAMPLE PHP CODE, DELETE WHEN NECCESSARY
 <?php
+session_start(); // Start PHP session to test if user is logged in.
 // Connecting, selecting database
 $dbconn = pg_connect("host=ec2-50-19-249-214.compute-1.amazonaws.com dbname=d4ppai3ve17g1b user=joblkqktbkwsnj password=REyBIR2hC2G-vSSYBgud-hPlgf")
     or die('Could not connect: ' . pg_last_error());

@@ -34,6 +34,7 @@
 		<div id="account">
 			<ul>
 				<?php
+				    session_start();
 					include 'functions/menu.php';
 					if (isset($_SESSION['username'])) {
 						userMenu();
