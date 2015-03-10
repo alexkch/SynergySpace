@@ -4,6 +4,6 @@
 			var username = window.location.hash.split("=")[1];
 			document.getElementById('user').value=username;
 		} else if (hash.indexOf("#loggedout")==0) {
-			alert("Logged out successfully.");
+			document.getElementById('notification').value="Logged out Successfully.";
 		}
 	});
