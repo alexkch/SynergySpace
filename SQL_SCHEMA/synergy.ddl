@@ -10,7 +10,7 @@ CREATE TABLE users (
   password varchar NOT NULL,
   name varchar NOT NULL,
   email varchar NOT NULL,
-  type char NOT NULL,
+  type char(6) NOT NULL,
   occupation varchar,
   birthdate varchar,
   gender varchar,
