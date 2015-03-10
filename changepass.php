@@ -36,11 +36,13 @@ function updateUser() {
 				header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$username);
 				die();
 			}
-		} else {
-			alert("You cannot change your password to the one already in use.");
+		} else { // New pass is same as old
+			header("Location: http://synergyspace309.herokuapp.com/changepass.php#error");
+			die();
 		}
-	} else {
-		alert("The new password does not match the confirmation new password.");
+	} else { // New pass don't match
+		header("Location: http://synergyspace309.herokuapp.com/changepass.php#error");
+		die();
 	}
 }
 
