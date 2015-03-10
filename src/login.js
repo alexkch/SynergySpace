@@ -14,10 +14,16 @@ $(function() { //Document Ready Function
 			document.getElementById('user').value=hash.split("=")[1];
 		} else if (hash.indexOf("loggedout")!=-1) { // Logged out
 			document.getElementById('notification').innerHTML="Logged out Successfully.";
-		} else if (hash.indexOf("error")!=-1) { // Error messsages
+		} else if (hash.indexOf("note")!=-1) { // Notifications
 			switch (hash.split("=")[1]) {
 				case "0":
 					document.getElementById('notification').innerHTML="Username or password incorrect.";
+					break;
+				case "1":
+					document.getElementById('notification').innerHTML="Please login to use that feature.";
+					break;
+				case "2":
+					document.getElementById('notification').innerHTML="Password changed. Please log-in below.";
 					break;
 			}
 		}

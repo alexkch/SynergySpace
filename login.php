@@ -37,8 +37,8 @@ function SignIn() {
 		$query = "SET search_path TO synergy; SELECT * FROM synergy.users WHERE username='$userName' AND password='$password'";
 		$result = pg_query($query) or die('Server error. Please try reloading <a href="http://synergyspace309.herokuapp.com/login.php">the login page</a>.');
 		if(pg_num_rows($result) != 1) {
-			//Reload page with error code: 0 - 'Username or password incorrect.'
-			header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName."&error=0");
+			//Reload page with note code: 0 - 'Username or password incorrect.'
+			header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName."&note=0");
 		} else { //Logged in
 			session_start();
 			$_SESSION['username'] = $userName;

@@ -14,8 +14,8 @@
 session_start(); // Start PHP session to test if user is logged in.
 $username = $_SESSION['username'];
 if (!isset($username) || empty($username)) {
-      // They are not logged in. Redirect to login page with error.
-	  header("Location: http://synergyspace309.herokuapp.com/login.php#error");
+      // They are not logged in. Redirect to login page with note code 1.
+	  header("Location: http://synergyspace309.herokuapp.com/login.php#note=1");
       die();
 }
 // Connecting, selecting database
@@ -29,10 +29,10 @@ function updateUser() {
 	// Test if new passwords match
 	if (strcmp($newPass, $newPassConf)==0) {
 		if (!strcmp($newPass, $oldPass)==0) {
-			$query = "SET search_path TO synergy; UPDATE users SET password=md5('$newPass') WHERE password=md5('$oldPass') AND username='$username'"; 
+			$query = "SET search_path TO synergy; UPDATE users SET password=md5('$newPass') WHERE password=md5('$oldPass') AND username='$username';"; 
 			$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 			if($data) { //Pass Change successful
-				header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$username);
+				header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$username."&note=2");
 				die();
 			}
 		} else { // New pass is same as old
