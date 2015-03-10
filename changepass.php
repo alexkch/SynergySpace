@@ -22,18 +22,18 @@ if (!isset($username) || empty($username)) {
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
 
-function deleteUser() { 
-	$newPass = md5($_POST['pass']); 
-	$newPassConf = md5($_POST['passconf']);  
-	$oldPass = md5($_POST['old']);
+function updateUser() { 
+	$newPass = $_POST['pass']; 
+	$newPassConf = $_POST['passconf'];  
+	$oldPass = $_POST['old'];
 	// Test if new passwords match
 	if (strcmp($newPass, $newPassConf)==0) {
 		if (!strcmp($newPass, $oldPass)==0) {
-			$query = "SET search_path TO synergy; UPDATE users SET password='$newPass' WHERE password='$oldPass' AND username='$username'"; 
+			$query = "SET search_path TO synergy; UPDATE users SET password=md5('$newPass') WHERE password=md5('$oldPass') AND username='$username'"; 
 			$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 			if($data) { //Pass Change successful
 				session_destroy(); // Delete all data associated with user
-				header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
+				header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$username);
 				die();
 			}
 		} else {
@@ -44,7 +44,7 @@ function deleteUser() {
 	}
 }
 
-if(isset($_POST['submit'])) {deleteUser();}
+if(isset($_POST['submit'])) {updateUser();}
 
 // Closing connection
 pg_close($dbconn);
