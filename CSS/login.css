@@ -16,6 +16,12 @@ section form {
 	padding: 10px;
 	background: #ebebeb;
 }
+section form #notification {
+	text-align: center;
+	font-weight: 600;
+	display: block;
+	margin: 5px 0 10px;
+}
 section fieldset {border: none;}
 section form legend {
 	color: #333;
