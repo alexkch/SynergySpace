@@ -25,7 +25,7 @@ $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn8
 function deleteUser() { 
 	$userName = $_POST['user']; 
 	$password = md5($_POST['pass']);  
-	$query = "DELETE FROM users WHERE username='$userName' AND password='$password'"; 
+	$query = "SET search_path TO synergy; DELETE FROM users WHERE username='$userName' AND password='$password'"; 
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 	if($data) { //Deletion successful
 		header("Location: http://synergyspace309.herokuapp.com/index.php#deleted=".$userName);

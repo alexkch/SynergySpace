@@ -42,7 +42,7 @@ function NewUser() {
 
 function SignUp() { 
 	if(!empty($_POST['user'])) {
-		$query = pg_query("SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
+		$query = pg_query("SET search_path TO synergy; SELECT * FROM users WHERE userName = '$_POST[user]' OR email = '$_POST[email]'")
 			or die('Query failed: ' . pg_last_error()); 
 		if(pg_num_rows($query) == 0) { NewUser(); } 
 		else {//Username or Email taken
