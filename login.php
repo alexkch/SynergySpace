@@ -78,7 +78,7 @@ pg_close($dbconn);
 	<section>
 		<form method="POST" action="login.php"> 
 			<fieldset>
-				<legend>LOG-IN</legend> 
+				<legend><span class="fa fa-sign-in fa-2x"></span>LOG-IN</legend> 
 				<input type="text" name="user" id="user" size="20" placeholder="Username"><br>
 				<input type="password" name="pass" size="20" placeholder="Password"><br>
 				<input id="button" type="submit" name="submit" value="Log-In"> 

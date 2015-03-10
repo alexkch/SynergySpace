@@ -9,7 +9,7 @@ section {
  */
 
 section form {
-	width: 300px;
+	max-width: 600px;
 	margin: 40px auto 0 auto;
 	border: 1px solid #cbc9c9;
 	border-radius: 7px;
@@ -18,12 +18,17 @@ section form {
 }
 section fieldset {border: none;}
 section form legend {
+	color: #333;
+	max-width: 500px;
 	font-weight: 600;
 	text-align: center;
 	font-size: 30px;
 	border-bottom: 1px solid #cbc9c9;
 	padding: 5px 50px;
 	margin-bottom: 10px;
+}
+section form legend span {
+	padding-right: 10px;
 }
 section form input[type="text"], section form input[type="password"] {
 	width: 80%;
@@ -41,4 +46,7 @@ section form input[type="submit"] {
 	margin: 0 auto;
 	width: 100px;
 	height: 35px;
+}
+section form input[type="radio"] {
+	margin: 10px 5% 30px 20%;
 }
