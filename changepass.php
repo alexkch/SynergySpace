@@ -49,6 +49,10 @@ function updateUser() {
 			header("Location: http://synergyspace309.herokuapp.com/changepass.php#error");
 			die();
 		}
+	} else { // New passwords do not match
+		header("Location: http://synergyspace309.herokuapp.com/changepass.php#error");
+		die();	
+	}
 }
 
 if(isset($_POST['submit'])) {updateUser();}
