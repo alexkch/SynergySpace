@@ -9,7 +9,7 @@ $(function() { //Document Ready Function
 		} else if (hash[i].indexOf("error")==0) {
 			switch (hash[i].split("=")[1]) {
 				case "0":
-					document.getElementById('notification').value="Username or password taken.";
+					document.getElementById('notification').innerHTML="Username or password taken.";
 					break;
 			}
 		}
