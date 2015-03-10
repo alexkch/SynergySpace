@@ -27,7 +27,7 @@ function deleteUser() {
 	$newPassConf = md5($_POST['passconf']);  
 	$oldPass = md5($_POST['old']);
 	// Test if new passwords match
-	if (strcmp($newPass, $newPassConf)) {
+	if (strcmp($newPass, $newPassConf)==0) {
 		$query = "SET search_path TO synergy; UPDATE users SET password='$newPass' WHERE password='$oldPass'"; 
 		$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
 		if($data) { //Deletion successful
