@@ -10,11 +10,11 @@ $(function() { //Document Ready Function
 	 * POSTCOND: Displays content to the user based on the hash of the page URL
 	 */
 	function displayNotes(hash) {
-		if (hash.indexOf("user")==0) { // Fill username textbox
+		if (hash.indexOf("user")!=-1) { // Fill username textbox
 			document.getElementById('user').value=hash.split("=")[1];
-		} else if (hash.indexOf("loggedout")==0) { // Logged out
+		} else if (hash.indexOf("loggedout")!=-1) { // Logged out
 			document.getElementById('notification').innerHTML="Logged out Successfully.";
-		} else if (hash.indexOf("error")==0) { // Error messsages
+		} else if (hash.indexOf("error")!=-1) { // Error messsages
 			switch (hash.split("=")[1]) {
 				case "0":
 					document.getElementById('notification').innerHTML="Username or password incorrect.";
