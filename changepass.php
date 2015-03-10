@@ -28,12 +28,16 @@ function deleteUser() {
 	$oldPass = md5($_POST['old']);
 	// Test if new passwords match
 	if (strcmp($newPass, $newPassConf)==0) {
-		$query = "SET search_path TO synergy; UPDATE users SET password='$newPass' WHERE password='$oldPass'"; 
-		$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-		if($data) { //Pass Change successful
-			session_destroy(); // Delete all data associated with user
-			header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
-			die();
+		if (!strcmp($newPass, $oldPass)==0) {
+			$query = "SET search_path TO synergy; UPDATE users SET password='$newPass' WHERE password='$oldPass' AND username='$username'"; 
+			$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
+			if($data) { //Pass Change successful
+				session_destroy(); // Delete all data associated with user
+				header("Location: http://synergyspace309.herokuapp.com/login.php#user=".$userName);
+				die();
+			}
+		} else {
+			alert("You cannot change your password to the one already in use.");
 		}
 	} else {
 		alert("The new password does not match the confirmation new password.");
@@ -74,7 +78,7 @@ pg_close($dbconn);
 			<fieldset >
 				<legend><span class="fa fa-pencil fa-2x"></span>Change Password</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
-				<input type='text' name='old' id='old' maxlength="20" placeholder="Old Password"/>
+				<input type='password' name='old' id='old' maxlength="20" placeholder="Old Password"/>
 				<input type='password' name='pass' id='pass' maxlength="20" placeholder="New Password"/>
 				<input type='password' name='passconf' id='passconf' maxlength="20" placeholder="Confirm New Password"/>
 				<input type='submit' name='submit' value='Submit' />	 
