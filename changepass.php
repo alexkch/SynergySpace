@@ -28,14 +28,10 @@ function updateUser() {
 	$oldPass = $_POST['old'];
 	// Test if new passwords match
 	if (strcmp($newPass, $newPassConf)==0) {
-		$query = "SET search_path TO synergy; SELECT username, password FROM users WHERE username='$username';"; 
-		$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-		$row = $data->pg_fetch_object();
-        $pw = $row->password;
-		if (!strcmp(md5($newPass), $pw)==0 && strcmp(md5($oldPass), $pw)==0 ) {
+		if (!strcmp($newPass, $oldPass)==0) {
 			$query = "SET search_path TO synergy; UPDATE users SET password=md5('$newPass') WHERE password=md5('$oldPass') AND username='$username';"; 
 			$data = pg_query($query) or die('Query failed: ' . pg_last_error()); 
-			if($data) { //Pass Change successful
+			if(pg_result_status($data) == PGSQL_COMMAND_OK) { //Pass Change successful
 				session_destroy(); //Log out
 				//Go to log-in page, with note 2: 'Account password changed successfully.'
 				header("Location: http://synergyspace309.herokuapp.com/login.php#note=2");
