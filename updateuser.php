@@ -24,6 +24,9 @@ if (!isset($username) || empty($username)) {
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
 
+$pgquery=pg_query("SET search_path TO synergy; SELECT * FROM users WHERE username='$username'")
+	or die('Query failed: ' . pg_last_error());
+$info=pg_fetch_object($pgquery);
 // updateUser with POSTed information
 function updateUser() {
 	$user=$_SESSION['username'];
@@ -83,11 +86,16 @@ pg_close($dbconn);
 				<legend><span class="fa fa-pencil fa-2x"></span>Update Account</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
-				<input type='text' name='occupation' id='occupation' maxlength="50" placeholder="Occupation"/>
-				<input type='text' name='birthdate' id='birthdate' maxlength="20" placeholder="Birth Date"/>
-				<input type='text' name='gender' id='gender' maxlength="20" placeholder="Gender"/>
-				<input type='text' name='homeaddress' id='homeaddress' maxlength="20" placeholder="Address"/>
-				<input type='text' name='phonenumber' id='phonenumber' maxlength="20" placeholder="Phone Number"/>
+				<input type='text' name='occupation' id='occupation' maxlength="50" placeholder="Occupation"
+					value=<?php echo '$info->occupation;' ?>/>
+				<input type='text' name='birthdate' id='birthdate' maxlength="20" placeholder="Birth Date"
+					value=<?php echo '$info->birthdate;' ?>/>
+				<input type='text' name='gender' id='gender' maxlength="20" placeholder="Gender"
+					value=<?php echo '$info->gender;' ?>/>
+				<input type='text' name='homeaddress' id='homeaddress' maxlength="20" placeholder="Address"
+					value=<?php echo '$info->homeaddress;' ?>/>
+				<input type='text' name='phonenumber' id='phonenumber' maxlength="20" placeholder="Phone Number"
+					value=<?php echo '$info->phonenumber;' ?>/>
 				<input type="radio" name="type" value="tenant">Tenant
 				<input type="radio" name="type" value="leaser">Leaser
 				<input type='submit' name='submit' value='Submit' />	 
