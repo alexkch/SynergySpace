@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For MOBILE -->
-<title>Search - SynergySpace</title>
+<title>Building - SynergySpace</title>
 
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
-<link rel="stylesheet" type="text/css" href="CSS/search.css"> <!-- Search CSS Styling -->
+<link rel="stylesheet" type="text/css" href="CSS/building.css"> <!-- Building CSS Styling -->
 </head>
 <body>
 	<?php
 		session_start();
+		$username = $_SESSION['username'];
 		include 'functions/menu.php';
 		if (isset($_SESSION['username'])) {
 			userMenu();
@@ -21,20 +22,16 @@
 		}
 	?>
 	<aside>
-		<a href=""><span class="fa fa-crosshairs"></span>Order by: relevance</a>
-		<a href=""><span class="fa fa-map-marker"></span>Order by: address</a>
-		<a href=""><span class="fa fa-map-marker"></span>Order by: city</a>
-		<a href=""><span class="fa fa-map-marker"></span>Order by: country</a>
-		<a href=""><span class="fa fa-connectdevelop"></span>Order by: network</a>
-		<a href=""><span class="fa fa-users"></span>Order by capacity</a>
+		<!-- TO DO -->
 	</aside>
 	<section>
+	<div id="card">
 		<?php
-		$address=$_GET['query'];
+			$id=$_GET['id'];
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			
-			$query = "SET search_path TO synergy; SELECT * FROM building WHERE address  LIKE '%$address%'";
+			$query = "SET search_path TO synergy; SELECT * FROM building WHERE b_id='$id'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
@@ -46,6 +43,7 @@
 				echo '</div>';
 			}
 		?>
+	</div>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>

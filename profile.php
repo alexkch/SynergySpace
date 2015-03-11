@@ -18,32 +18,17 @@ if (!isset($username) || empty($username)) {
 	  header("Location: http://synergyspace309.herokuapp.com/login.php#note=1");
       die();
 }
-$username = $_SESSION['username'];
 ?>
 <body>
-	<header>
-		<a href="/index.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
-		<div id='search-box'>
-			<form action='/search.php' id='search-form' method='get' target='_top'>
-				<input id='search-text' name='q' placeholder='Search by postal code' type='text' autocomplete="off"/>
-				<button id='search-button' type='submit'>                     
-					<span class="fa fa-search"></span>
-				</button>
-			</form>
-		</div>
-		<div id="account">
-			<ul>
-				<?php
-					include 'functions/menu.php';
-					if (isset($_SESSION['username'])) {
-						userMenu();
-					} else {
-						defaultMenu();
-					}
-				?>
-			</ul>
-		</div>
-	</header>
+	<?php
+		session_start();
+		include 'functions/menu.php';
+		if (isset($_SESSION['username'])) {
+			userMenu();
+		} else {
+			defaultMenu();
+		}
+	?>
 	<nav></nav>
 	<aside>
 		<a href="/updateuser.php"><span class="fa fa-pencil"></span>Update Account Information</a>

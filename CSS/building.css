@@ -1,0 +1,46 @@
+/**
+ * Aside navigation
+ */
+aside {
+	position: fixed;
+	left: 0;
+	top: 65px;
+	bottom: 45px;
+	width: 250px;
+	background: #eee;
+}
+aside a {
+	font-size: 13px;
+	padding: 10px 0;
+	float: left;
+	display: block;
+	width: 100%;
+	color: #111F50;
+	text-decoration: none;
+}
+aside a:hover {
+	background: #888;
+	color: #fff;
+}
+aside a span {
+	text-align: center;
+	width: 40px;
+}
+/**
+ * Building List
+ */
+.building {
+	background: #f5f5f5;
+	padding: 10px 20px;
+}
+.building:nth-child(even) {
+	background: #fefefe;
+}
+.building h2 {
+	display: inline;
+	padding: 0 10px;
+	font-size: 20px;
+}
+.building p {
+	font-size: 14px;
+}
