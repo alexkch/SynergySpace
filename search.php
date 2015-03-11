@@ -61,6 +61,7 @@
 				or die('Could not connect: ' . pg_last_error());
 			
 			$query = "SET search_path TO synergy; SELECT * FROM building WHERE address LIKE '%$search%' ORDER BY $order;";
+			echo $query;
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
