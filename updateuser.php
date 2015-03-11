@@ -87,15 +87,15 @@ pg_close($dbconn);
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
 				<input type='text' name='occupation' id='occupation' maxlength="50" placeholder="Occupation"
-					value=<?php echo '$info->occupation;' ?>/>
+					value='<?php echo $info->occupation; ?>'/>
 				<input type='text' name='birthdate' id='birthdate' maxlength="20" placeholder="Birth Date"
-					value=<?php echo '$info->birthdate;' ?>/>
+					value='<?php echo $info->birthdate; ?>'/>
 				<input type='text' name='gender' id='gender' maxlength="20" placeholder="Gender"
-					value=<?php echo '$info->gender;' ?>/>
+					value='<?php echo $info->gender; ?>'/>
 				<input type='text' name='homeaddress' id='homeaddress' maxlength="20" placeholder="Address"
-					value=<?php echo '$info->homeaddress;' ?>/>
+					value='<?php echo $info->homeaddress; ?>'/>
 				<input type='text' name='phonenumber' id='phonenumber' maxlength="20" placeholder="Phone Number"
-					value=<?php echo '$info->phonenumber;' ?>/>
+					value='<?php echo $info->phonenumber; ?>'/>
 				<input type="radio" name="type" value="tenant">Tenant
 				<input type="radio" name="type" value="leaser">Leaser
 				<input type='submit' name='submit' value='Submit' />	 
