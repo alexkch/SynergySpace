@@ -24,6 +24,13 @@ if (!isset($username) || empty($username)) {
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
 function updateUser() {	
+	$name=$_POST['name'];
+	$type=$_POST['type'];
+	$occupation=$_POST['occupation'];
+	$birthdate=$_POST['birthdate'];
+	$gender=$_POST['gender'];
+	$homeaddress=$_POST['homeaddress'];
+	$phonenumber=$_POST['phonenumber'];
 	$query = "
 		SET search_path TO synergy; 
 		UPDATE users SET name='$name',type='$type',
@@ -70,7 +77,7 @@ pg_close($dbconn);
 	<section>
 		<form id='register' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post' accept-charset='UTF-8'>
 			<fieldset >
-				<legend><span class="fa fa-plus fa-2x"></span>Register</legend>
+				<legend><span class="fa fa-pencil fa-2x"></span>Update Account</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
 				<input type='text' name='occupation' id='occupation' maxlength="50" placeholder="Occupation"/>
