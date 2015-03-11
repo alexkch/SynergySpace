@@ -24,32 +24,44 @@
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
 		<input type="hidden" name="order" value="b_id" />
-		<input type="submit" value="Order by: default" />	
+		<button type="submit">
+			<span class="fa fa-crosshairs"></span>Order by: default
+		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
 		<input type="hidden" name="order" value="address" /> 
-		<input type="submit" value="Order by: address" />	
+		<button type="submit">
+			<span class="fa fa-map-marker"></span>Order by: address
+		</button>	
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
 		<input type="hidden" name="order" value="city" /> 
-		<input type="submit" value="Order by: city" />	
+		<button type="submit">
+			<span class="fa fa-map-marker"></span>Order by: city
+		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
 		<input type="hidden" name="order" value="country" /> 
-		<input type="submit" value="Order by: country" />	
+		<button type="submit">
+			<span class="fa fa-map-marker"></span>Order by: country
+		</button>	
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
 		<input type="hidden" name="order" value="n_id" /> 
-		<input type="submit" value="Order by: network" />	
+		<button type="submit">
+			<span class="fa fa-connectdevelop"></span>Order by: network
+		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
 		<input type="hidden" name="order" value="capacity" /> 
-		<input type="submit" value="Order by: capacity" />	
+		<button type="submit">
+			<span class="fa fa-users"></span>Order by: capacity
+		</button>
 		</form>
 	</aside>
 	<section>

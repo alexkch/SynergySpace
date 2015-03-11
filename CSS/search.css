@@ -9,7 +9,7 @@ aside {
 	width: 250px;
 	background: #eee;
 }
-aside input[type='submit'] {
+aside button {
 	cursor: pointer;
 	background: none;
 	border: none;
@@ -20,11 +20,11 @@ aside input[type='submit'] {
 	text-decoration: none;
 	text-align: left;
 }
-aside input[type='submit']:hover {
+aside button:hover {
 	background: #888;
 	color: #fff;
 }
-aside input[type='submit'] span {
+aside button span {
 	text-align: center;
 	width: 40px;
 }
