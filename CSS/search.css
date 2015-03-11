@@ -9,20 +9,22 @@ aside {
 	width: 250px;
 	background: #eee;
 }
-aside a {
+aside input[type='submit'] {
+	cursor: pointer;
+	background: none;
+	border: none;
 	font-size: 13px;
 	padding: 10px 0;
-	float: left;
-	display: block;
 	width: 100%;
 	color: #111F50;
 	text-decoration: none;
+	text-align: left;
 }
-aside a:hover {
+aside input[type='submit']:hover {
 	background: #888;
 	color: #fff;
 }
-aside a span {
+aside input[type='submit'] span {
 	text-align: center;
 	width: 40px;
 }
