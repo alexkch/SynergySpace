@@ -31,7 +31,7 @@
 			$query = "SET search_path TO synergy; SELECT * FROM building WHERE address  LIKE '%$address%'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
-				echo '<div class=""building">';
+				echo '<div class="building">';
 				echo '<span class="fa fa-building-o fa-2x"></span>';
 				echo '<h2>'.$data->address.'</h2>';
 				echo '<p>City: '.$data->city.'</p>';
