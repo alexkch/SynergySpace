@@ -85,14 +85,15 @@ pg_close($dbconn);
 			<fieldset >
 				<legend><span class="fa fa-pencil fa-2x"></span>Update Account</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
-				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
-				<input type='text' name='occupation' id='occupation' maxlength="50" placeholder="Occupation"
+				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"
+					value='<?php echo $info->name; ?>'/>
+				<input type='text' name='occupation' id='occupation' maxlength="100" placeholder="Occupation"
 					value='<?php echo $info->occupation; ?>'/>
 				<input type='text' name='birthdate' id='birthdate' maxlength="20" placeholder="Birth Date"
 					value='<?php echo $info->birthdate; ?>'/>
 				<input type='text' name='gender' id='gender' maxlength="20" placeholder="Gender"
 					value='<?php echo $info->gender; ?>'/>
-				<input type='text' name='homeaddress' id='homeaddress' maxlength="20" placeholder="Address"
+				<input type='text' name='homeaddress' id='homeaddress' maxlength="100" placeholder="Address"
 					value='<?php echo $info->homeaddress; ?>'/>
 				<input type='text' name='phonenumber' id='phonenumber' maxlength="20" placeholder="Phone Number"
 					value='<?php echo $info->phonenumber; ?>'/>
