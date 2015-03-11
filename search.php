@@ -31,6 +31,8 @@
 						case "b_id asc":echo "b_id desc";break;
 						case "b_id desc":echo "b_id asc";break;
 					}
+				} else {
+					echo "b_id asc";
 				};
 			?>" />
 		<button type="submit">

@@ -28,6 +28,9 @@ aside button span {
 	text-align: center;
 	width: 40px;
 }
+aside button span:nth-child(2) {
+	float: right;
+}
 /**
  * Building List
  */
