@@ -27,6 +27,7 @@
 				switch($_GET['order']){
 					case $att.' asc':echo 'desc';break;
 					case $att.' desc':echo 'asc';break;
+					default: echo 'asc';
 				}
 			} else {
 				echo "asc";
