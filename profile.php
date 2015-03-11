@@ -17,15 +17,7 @@ if (!isset($username) || empty($username)) {
       // They are not logged in. Redirect to login page with error.
 	  header("Location: http://synergyspace309.herokuapp.com/login.php#error");
       die();
-} else { //User logged in!
-	$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
-		or die('Could not connect: ' . pg_last_error());
-	
-	$query = "SET search_path TO synergy; SELECT * FROM users WHERE username='$username'";
-	$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-	// We need to parse $result to get user information and fill this page.
 }
-
 $username = $_SESSION['username'];
 ?>
 <body>
@@ -61,14 +53,22 @@ $username = $_SESSION['username'];
 	</aside>
 	<section>
 	<div id="gradient"></div>
-<div id="card">
-		<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c0.0.160.160/p160x160/10690125_757073407667986_4519955383896243899_n.jpg?oh=e257227f21b2fcb0968537e017505b3a&amp;oe=55799810&amp;__gda__=1438501255_c60f97922345625eb33199e96fde4c2d">
-		<h2>Kevin Bath</h2>
-		<p id="occupation">Web Developer</p>
-		<p id="burthdate">June 28, 19994</p>
-		<p id="gender">Male</p>
-		<span id="homeaddress" class="left bottom">111 St George St</span>
-		<span id="phonenumber" class="right bottom">(416) 770-6583</span>
+	<div id="card">
+		<?php
+			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
+				or die('Could not connect: ' . pg_last_error());
+			
+			$query = "SET search_path TO synergy; SELECT * FROM users WHERE username='$username'";
+			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+			$data = pg_fetch_object($result);
+			echo '<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c0.0.160.160/p160x160/10690125_757073407667986_4519955383896243899_n.jpg?oh=e257227f21b2fcb0968537e017505b3a&amp;oe=55799810&amp;__gda__=1438501255_c60f97922345625eb33199e96fde4c2d">';
+			echo '<h2>'.$data->name.'</h2>';
+			echo '<p>'.$data->occupation.'</p>';
+			echo '<p>'.$data->birthdate.'</p>';
+			echo '<p>'.$data->gender.'</p>';
+			echo '<span class="left bottom">'.$data->homeaddress.'</span>';
+			echo '<span class="right bottom">'.$data->phonenumber.'</span>';
+		?>
 	</div>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
