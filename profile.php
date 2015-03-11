@@ -60,7 +60,7 @@ $username = $_SESSION['username'];
 			
 			$query = "SET search_path TO synergy; SELECT * FROM users WHERE username='$username'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-			while ($data = pg_fetch_object($result)) {}
+			while ($data = pg_fetch_object($result)) {
 				echo '<img src="http://www.adtechnology.co.uk/images/UGM-default-user.png">';
 				echo '<h2>'.$data->name.'</h2>';
 				echo '<p>'.$data->occupation.'</p>';
