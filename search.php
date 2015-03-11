@@ -21,20 +21,39 @@
 		}
 	?>
 	<aside>
-		<a href=""><span class="fa fa-crosshairs"></span>Order by: relevance</a>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+		<input type="hidden" name="order" value="b_id" /> 
+		<a href="#" onClick='this.form.submit()'><span class="fa fa-crosshairs"></span>Order by: default</a>
+		</form>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+		<input type="hidden" name="order" value="address" /> 
 		<a href=""><span class="fa fa-map-marker"></span>Order by: address</a>
+		</form>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+		<input type="hidden" name="order" value="city" /> 
 		<a href=""><span class="fa fa-map-marker"></span>Order by: city</a>
+		</form>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+		<input type="hidden" name="order" value="country" /> 
 		<a href=""><span class="fa fa-map-marker"></span>Order by: country</a>
+		</form>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+		<input type="hidden" name="order" value="n_id" /> 
 		<a href=""><span class="fa fa-connectdevelop"></span>Order by: network</a>
+		</form>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+		<input type="hidden" name="order" value="capacity" /> 
 		<a href=""><span class="fa fa-users"></span>Order by capacity</a>
+		</form>
 	</aside>
 	<section>
 		<?php
-		$address=$_GET['query'];
+			$address=$_GET['query'];
+			$order=$_GET['order'];
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			
-			$query = "SET search_path TO synergy; SELECT * FROM building WHERE address  LIKE '%$address%'";
+			$query = "SET search_path TO synergy; SELECT * FROM building WHERE address  LIKE '%$address%' ORDER BY $order;";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
