@@ -60,14 +60,15 @@ $username = $_SESSION['username'];
 			
 			$query = "SET search_path TO synergy; SELECT * FROM users WHERE username='$username'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-			$data = pg_fetch_object($result);
-			echo '<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c0.0.160.160/p160x160/10690125_757073407667986_4519955383896243899_n.jpg?oh=e257227f21b2fcb0968537e017505b3a&amp;oe=55799810&amp;__gda__=1438501255_c60f97922345625eb33199e96fde4c2d">';
-			echo '<h2>'.$data->name.'</h2>';
-			echo '<p>'.$data->occupation.'</p>';
-			echo '<p>'.$data->birthdate.'</p>';
-			echo '<p>'.$data->gender.'</p>';
-			echo '<span class="left bottom">'.$data->homeaddress.'</span>';
-			echo '<span class="right bottom">'.$data->phonenumber.'</span>';
+			while ($data = pg_fetch_object($result)) {}
+				echo '<img src="http://www.adtechnology.co.uk/images/UGM-default-user.png">';
+				echo '<h2>'.$data->name.'</h2>';
+				echo '<p>'.$data->occupation.'</p>';
+				echo '<p>'.$data->birthdate.'</p>';
+				echo '<p>'.$data->gender.'</p>';
+				echo '<span class="left bottom">'.$data->homeaddress.'</span>';
+				echo '<span class="right bottom">'.$data->phonenumber.'</span>';
+			}
 		?>
 	</div>
 	</section>
