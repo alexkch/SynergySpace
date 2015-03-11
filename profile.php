@@ -46,7 +46,7 @@ $username = $_SESSION['username'];
 	</header>
 	<nav></nav>
 	<aside>
-		<a href=""><span class="fa fa-pencil"></span>Update Account Information</a>
+		<a href="/updateuser.php"><span class="fa fa-pencil"></span>Update Account Information</a>
 		<a href="/changepass.php"><span class="fa fa-unlock-alt"></span>Change Account Password</a>
 		<a href=""><span class="fa fa-user-secret"></span>Privacy Settings</a>
 		<a href="/delete.php"><span class="fa fa-trash-o"></span>Delete Account</a>
