@@ -1,0 +1,18 @@
+/**
+ * Building List
+ */
+.building {
+	background: #f5f5f5;
+	padding: 10px 20px;
+}
+.building:nth-child(even) {
+	background: #fefefe;
+}
+.building h2 {
+	display: inline;
+	padding: 0 10px;
+	font-size: 20px;
+}
+.building p {
+	font-size: 14px;
+}

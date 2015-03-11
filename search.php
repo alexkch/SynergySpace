@@ -8,6 +8,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
+<link rel="stylesheet" type="text/css" href="CSS/search.css"> <!-- Search CSS Styling -->
 </head>
 <body>
 	<header>
@@ -44,11 +45,13 @@
 			$query = "SET search_path TO synergy; SELECT * FROM building WHERE address  LIKE '%$address%'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
+				echo '<div class=""building">';
 				echo '<span class="fa fa-building-o fa-2x"></span>';
 				echo '<h2>'.$data->address.'</h2>';
 				echo '<p>City: '.$data->city.'</p>';
 				echo '<p>Country: '.$data->country.'</p>';
 				echo '<p>Capacity: '.$data->capacity.'</p>';
+				echo '</div>';
 			}
 		?>
 	</section>
