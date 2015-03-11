@@ -23,7 +23,8 @@ aside a:hover {
 	color: #fff;
 }
 aside a span {
-	padding: 0 10px 0 15px;
+	text-align: center;
+	width: 40px;
 }
 /**
  * Building List
