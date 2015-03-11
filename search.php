@@ -24,15 +24,14 @@
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
 		<input type="hidden" name="order" 
-		value="b_id 
-			<?php
+		value="b_id <?php
 				if($_GET['order']) {
 					switch($_GET['order']){
-						case "b_id asc":echo "b_id desc";break;
-						case "b_id desc":echo "b_id asc";break;
+						case 'b_id asc':echo 'desc';break;
+						case 'b_id desc':echo 'asc';break;
 					}
 				} else {
-					echo "b_id asc";
+					echo "asc";
 				};
 			?>" />
 		<button type="submit">
