@@ -21,6 +21,12 @@
 		}
 	?>
 	<aside>
+		<a href=""><span class="fa fa-crosshair"></span>Order by: relevance</a>
+		<a href=""><span class="fa fa-map-marker"></span>Order by: address</a>
+		<a href=""><span class="fa fa-map-marker"></span>Order by: city</a>
+		<a href=""><span class="fa fa-map-marker"></span>Order by: country</a>
+		<a href=""><span class="fa fa-connectdevelop"></span>Order by: network</a>
+		<a href=""><span class="fa fa-users"></span>Order by capacity</a>
 	</aside>
 	<section>
 		<?php
