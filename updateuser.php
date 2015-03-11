@@ -25,7 +25,8 @@ $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn8
     or die('Could not connect: ' . pg_last_error());
 
 // updateUser with POSTed information
-function updateUser() {	
+function updateUser() {
+	$user=$_SESSION['username'];
 	$name=$_POST['name'];
 	$type=$_POST['type'];
 	$occupation=$_POST['occupation'];
@@ -35,11 +36,11 @@ function updateUser() {
 	$phonenumber=$_POST['phonenumber'];
 	$query = "
 		SET search_path TO synergy; 
-		UPDATE users SET name='".$name."',type='".$type."', 
-			occupation='".$occupation."',birthdate='".$birthdate."', 
-			gender='".$gender."',homeaddress='".$homeaddress."', 
-			phonenumber='".$phonenumber."' 
-		WHERE username='".$username."'";
+		UPDATE users SET name='$name',type='$type',
+			occupation='$occupation',birthdate='$birthdate',
+			gender='$gender',homeaddress='$homeaddress', 
+			phonenumber='$phonenumber' 
+		WHERE username='$user'";
 	$data = pg_query($query) or die('Query failed: ' . pg_last_error());
 	if($data) { // Update successful
 		//Go to profile page
