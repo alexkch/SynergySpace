@@ -28,10 +28,10 @@
 				switch($_GET['order']){
 					case $att.' asc':$str='desc';break;
 					case $att.' desc':$str='asc';break;
-					default: $str='desc';
+					default: $str='asc';
 				}
 			} else {
-				$str="asc";
+				$str="desc";
 			}
 			return $str;
 		}
