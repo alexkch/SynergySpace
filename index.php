@@ -30,7 +30,7 @@
 		</div>
 		<form id='register' action="register.php" method='post' accept-charset='UTF-8'>
 			<fieldset >
-				<legend><span class="fa fa-plus fa-2x"></span>Register</legend>
+				<legend><span class="fa fa-user-plus fa-2x"></span>Register</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
 				<input type='text' name='email' id='email' maxlength="50" placeholder="Email"/>
