@@ -83,7 +83,7 @@
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			
-			$query = "SET search_path TO synergy; SELECT * FROM building WHERE address LIKE '%$search%' ORDER BY $order;";
+			$query = "SET search_path TO synergy; SELECT * FROM building WHERE LOWER(address) LIKE LOWER('%$search%') ORDER BY $order;";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
