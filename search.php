@@ -33,45 +33,45 @@
 		}
 	?>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
-		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
+		<input type="hidden" name="q" value="<?php echo $_GET['q'];?>" />
 		<input type="hidden" name="order" value="b_id <?php echo ascendVSdescend('b_id');?>" />
 		<button type="submit">
-			<span class="fa fa-random"></span>Order by: default<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('b_id');?>"></span>
+			<span class="fa fa-random"></span>Date Listed<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('b_id');?>"></span>
 		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
-		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
+		<input type="hidden" name="q" value="<?php echo $_GET['q'];?>" />
 		<input type="hidden" name="order" value="address <?php echo ascendVSdescend('address');?>" /> 
 		<button type="submit">
-			<span class="fa fa-map-marker"></span>Order by: address<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('address');?>"></span>
+			<span class="fa fa-map-marker"></span>Address<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('address');?>"></span>
 		</button>	
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
-		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
+		<input type="hidden" name="q" value="<?php echo $_GET['q'];?>" />
 		<input type="hidden" name="order" value="city <?php echo ascendVSdescend('city');?>" /> 
 		<button type="submit">
-			<span class="fa fa-map-marker"></span>Order by: city<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('city');?>"></span>
+			<span class="fa fa-map-marker"></span>City<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('city');?>"></span>
 		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
-		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
+		<input type="hidden" name="q" value="<?php echo $_GET['q'];?>" />
 		<input type="hidden" name="order" value="country <?php echo ascendVSdescend('country');?>" /> 
 		<button type="submit">
-			<span class="fa fa-map-marker"></span>Order by: country<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('country');?>"></span>
+			<span class="fa fa-map-marker"></span>Country<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('country');?>"></span>
 		</button>	
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
-		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
+		<input type="hidden" name="q" value="<?php echo $_GET['q'];?>" />
 		<input type="hidden" name="order" value="n_id <?php echo ascendVSdescend('n_id');?>" /> 
 		<button type="submit">
-			<span class="fa fa-connectdevelop"></span>Order by: network<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('n_id');?>"></span>
+			<span class="fa fa-connectdevelop"></span>Network<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('n_id');?>"></span>
 		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
-		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
+		<input type="hidden" name="q" value="<?php echo $_GET['q'];?>" />
 		<input type="hidden" name="order" value="capacity <?php echo ascendVSdescend('capacity');?>" /> 
 		<button type="submit">
-			<span class="fa fa-users"></span>Order by: capacity<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('capacity');?>"></span>
+			<span class="fa fa-users"></span>Capacity<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('capacity');?>"></span>
 		</button>
 		</form>
 	</aside>
