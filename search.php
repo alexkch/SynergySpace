@@ -24,14 +24,10 @@
 	<?php 
 		function ascendVSdescend($att) {
 			$str="";
-			if(empty($_GET['order'])) {
-				switch($_GET['order']){
-					case $att.' asc':$str='desc';break;
-					case $att.' desc':$str='asc';break;
-					default: $str='asc';
-				}
-			} else {
-				$str="desc";
+			switch($_GET['order']){
+				case $att.' asc':$str='desc';break;
+				case $att.' desc':$str='asc';break;
+				default: $str='asc';
 			}
 			return $str;
 		}
