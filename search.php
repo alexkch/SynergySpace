@@ -23,57 +23,59 @@
 	<aside>
 	<?php 
 		function ascendVSdescend($att) {
+			$str="";
 			if(empty($_GET['order'])) {
 				switch($_GET['order']){
-					case $att.' asc':echo 'desc';break;
-					case $att.' desc':echo 'asc';break;
-					default: echo 'asc';
+					case $att.' asc':$str='desc';break;
+					case $att.' desc':$str='asc';break;
+					default: $str='asc';
 				}
 			} else {
-				echo "asc";
+				$str="asc";
 			}
+			return $str;
 		}
 	?>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
-		<input type="hidden" name="order" value="b_id <?php ascendVSdescend('b_id')?>" />
+		<input type="hidden" name="order" value="b_id <?php echo ascendVSdescend('b_id');?>" />
 		<button type="submit">
-			<span class="fa fa-random"></span>Order by: default<span class="fa fa-sort-alpha-<?php ascendVSdescend('b_id');?>"></span>
+			<span class="fa fa-random"></span>Order by: default<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('b_id');?>"></span>
 		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
-		<input type="hidden" name="order" value="address <?php ascendVSdescend('address');?>" /> 
+		<input type="hidden" name="order" value="address <?php echo ascendVSdescend('address');?>" /> 
 		<button type="submit">
-			<span class="fa fa-map-marker"></span>Order by: address<span class="fa fa-sort-alpha-<?php ascendVSdescend('address');?>"></span>
+			<span class="fa fa-map-marker"></span>Order by: address<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('address');?>"></span>
 		</button>	
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
-		<input type="hidden" name="order" value="city <?php ascendVSdescend('city');?>" /> 
+		<input type="hidden" name="order" value="city <?php echo ascendVSdescend('city');?>" /> 
 		<button type="submit">
-			<span class="fa fa-map-marker"></span>Order by: city<span class="fa fa-sort-alpha-<?php ascendVSdescend('city');?>"></span>
+			<span class="fa fa-map-marker"></span>Order by: city<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('city');?>"></span>
 		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
-		<input type="hidden" name="order" value="country <?php ascendVSdescend('country');?>" /> 
+		<input type="hidden" name="order" value="country <?php echo ascendVSdescend('country');?>" /> 
 		<button type="submit">
-			<span class="fa fa-map-marker"></span>Order by: country<span class="fa fa-sort-alpha-<?php ascendVSdescend('country');?>"></span>
+			<span class="fa fa-map-marker"></span>Order by: country<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('country');?>"></span>
 		</button>	
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
-		<input type="hidden" name="order" value="n_id <?php ascendVSdescend('n_id');?>" /> 
+		<input type="hidden" name="order" value="n_id <?php echo ascendVSdescend('n_id');?>" /> 
 		<button type="submit">
-			<span class="fa fa-connectdevelop"></span>Order by: network<span class="fa fa-sort-alpha-<?php ascendVSdescend('n_id');?>"></span>
+			<span class="fa fa-connectdevelop"></span>Order by: network<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('n_id');?>"></span>
 		</button>
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
-		<input type="hidden" name="order" value="capacity <?php ascendVSdescend('capacity');?>" /> 
+		<input type="hidden" name="order" value="capacity <?php echo ascendVSdescend('capacity');?>" /> 
 		<button type="submit">
-			<span class="fa fa-users"></span>Order by: capacity<span class="fa fa-sort-alpha-<?php ascendVSdescend('capacity');?>"></span>
+			<span class="fa fa-users"></span>Order by: capacity<span class="fa fa-sort-alpha-<?php echo ascendVSdescend('capacity');?>"></span>
 		</button>
 		</form>
 	</aside>
