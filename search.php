@@ -50,7 +50,7 @@
 		</form>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
 		<input type="hidden" name="q" value="<?php $_GET['q'];?>" />
-		<input type="hidden" name="order" value="city <?php ascendVSdescend('city']);?>" /> 
+		<input type="hidden" name="order" value="city <?php ascendVSdescend('city');?>" /> 
 		<button type="submit">
 			<span class="fa fa-map-marker"></span>Order by: city<span class="fa fa-sort-alpha-<?php ascendVSdescend('city');?>"></span>
 		</button>
