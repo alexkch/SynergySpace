@@ -37,6 +37,19 @@
 			<p>Collaborate with other workers and find the perfect space.</p>
 			<span class="fa fa-arrow-circle-down fa-4x"></span>
 		</div>
+		<form id='register' action="register.php" method='post' accept-charset='UTF-8'>
+			<fieldset >
+				<legend><span class="fa fa-plus fa-2x"></span>Register</legend>
+				<input type='hidden' name='submitted' id='submitted' value='1'/>
+				<input type='text' name='name' id='name' maxlength="20" placeholder="Name"/>
+				<input type='text' name='email' id='email' maxlength="50" placeholder="Email"/>
+				<input type='text' name='user' id='user' maxlength="20" placeholder="Username"/>
+				<input type='password' name='pass' id='pass' maxlength="20" placeholder="Password"/>
+				<input type="radio" name="type" value="tenant">Tenant
+				<input type="radio" name="type" value="leaser">Leaser
+				<input type='submit' name='submit' value='Submit' />	 
+			</fieldset>
+		</form>
     </section>
 </body>
 </html>

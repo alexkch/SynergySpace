@@ -80,7 +80,6 @@ pg_close($dbconn);
 				<input type='submit' name='submit' value='Submit' />	 
 			</fieldset>
 		</form>
-		</form>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 </body>
