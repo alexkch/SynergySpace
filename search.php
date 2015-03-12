@@ -23,7 +23,7 @@
 	<aside>
 	<?php 
 		function ascendVSdescend($att) {
-			if($_GET['order']) {
+			if(empty($_GET['order'])) {
 				switch($_GET['order']){
 					case $att.' asc':echo 'desc';break;
 					case $att.' desc':echo 'asc';break;
