@@ -1,1 +1,35 @@
-div#relwrapper {margin-top: 100px;}
+section {
+	left: 0;
+	min-width: 825px;
+}
+section #splash {
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+}
+section #splash img {
+	width: 105%;
+	margin-left: -2.5%;
+	position: absolute;
+	bottom: 0;
+	-webkit-filter: sepia(.4) blur(.7px) brightness(.4);
+    filter: sepia(.4) blur(.7px) brightness(.5);
+}
+section #spash h1, section #splash p, section #splash span {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: #fff;
+}
+section #splash h1 {
+	bottom: 40%;
+	font-size: 70px;
+}
+section #splash p {
+	bottom: 30%;
+	font-size: 20px;
+}
+section #splash span {
+	bottom: 10px;
+}
