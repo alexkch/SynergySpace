@@ -15,7 +15,7 @@ background-color: #F1F1F1;
 	display: inline-block;
 	font-size: 26px;
 	margin: 5px 20px 0 50px;
-  float:right;
+  	float:right;
 }
 
 .nav_logout {
@@ -37,6 +37,7 @@ background-color: #F1F1F1;
 	position: fixed;
 	top: 0;
 	width: 25%;
+	z-index = 100;
 
 	-webkit-transition: all .50s ease;
 	   -moz-transition: all .50s ease;

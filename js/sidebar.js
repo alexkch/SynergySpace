@@ -4,4 +4,3 @@
     });
 
 
-  $('#loginModal').find('form')[0].reset();
