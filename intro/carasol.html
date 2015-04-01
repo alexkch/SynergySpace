@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>New home</title>
+<meta name="description"/>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css">
+ 
+ 
+ 
+</head>
+ 
+<body>
+ 
+ <section>
+    <!-- Carousel-->
+    <div id="myCarousel" class="carousel slide">  
+      <div class="carousel-inner">
+        <div class="item active">         
+         <!--<img>-->
+          <img src="http://placehold.it/1500x400/cccccc/ffffff" alt="Slide1">
+          <div class="container">
+            <div class="carousel-caption">
+              <h2><span>Carousel Headline 1</span></h2>
+              <p class="caption"><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></p>
+              <p><a class="btn btn-danger" href="#">Read More <i class="fa fa-angle-double-right"></i></a>
+            </p></div>
+          </div>
+        </div>
+        <div class="item">
+          <!--<img>-->
+          <img src="http://placehold.it/1500x400/999999/cccccc" alt="Slide2">
+          <div class="container">
+            <div class="carousel-caption">
+              <h2><span>Carousel Headline 2</span></h2>
+              <p class="caption"><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></p>
+              <p><a class="btn btn-danger" href="#">Read More <i class="fa fa-angle-double-right"></i></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <!--<img>-->
+          <img src="http://placehold.it/1500x400/dddddd/333333" alt="Slide3">
+          <div class="container">
+            <div class="carousel-caption">
+              <h2><span>Carousel Headline 3</span></h2>
+              <p class="caption"><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></p>
+              <p><a class="btn btn-danger" href="#">Read More <i class="fa fa-angle-double-right"></i></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="fa fa-chevron-left fa-2x"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="fa fa-chevron-right fa-2x"></span></a>  
+    </div>
+    <!-- /.carousel -->
+</section>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+
+      <div class="row">
+          
+        <?php
+        echo '<div class="col-md-2">';
+        echo '<a class="navbar-brand" href="#">Welcome '. $_SESSION["username"] . '</a></div>';
+        ?>
+
+
+      <div class="col-md-2">     
+          <span class="nav_trigger">
+              <i class="fa fa-user" style="margin-right:80px;"></i>
+          </span>
+
+          <span class="nav_logout">
+            <i class="fa fa-power-off"></i>
+          </span>
+        </div>
+
+        <div class="col-md-6">
+            <form class="navbar-form" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search for new startups" style="width:500px;">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="fa fa-question-circle"></span> FAQ</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> About Us</a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="#"><span class="fa fa-facebook-square"></span> Our Facebook</a></li>
+                      <li><a href="#"><span class="fa fa-twitter-square"></span> Our Twitter</a></li>
+                    <li><a href="#"><span class="fa fa-youtube-play"></span> Our Youtube</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><span class="fa fa-envelope-o"></span> Contact Us</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><span class="fa fa-info-circle"></span> About Us</a></li>
+                </ul>
+              </li>
+          </ul>
+      </div>
+
+      </div>
+  </div>
+</nav>
+<!-- ./bottom menu bar -->
+
+<!-- Sidebar -->
+<div id="push_sidebar">
+  <ul class="list-unstyled">
+    <li><a href="#"><span class="fa fa-home"></span>Home</a></li>
+    <li><a href="#"><span class="fa fa-user"></span>Profile</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#createPrjSidebar"><span class="fa fa-plus"></span>New Project</a></li>
+    <li><a href="#"><span class="fa fa-folder-open-o"></span>Existing Projects</a></li>
+    <li><a href="#"><span class="fa fa-envelope"></span>Messages</a></li>
+    <li><a href="#"><span class="fa fa-bar-chart"></span>Chart</a></li>
+    <li><a href="#"><span class="fa fa-star"></span>Favourites</a></li>
+  </ul>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="modal fade" id="createPrjSidebar">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+                  
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+            <h3 class="blk-txt">Create New Project</h3>
+          </div>
+                
+          <div class="modal-body blk-txt">
+
+          <form action="../login/createNewPrj.php" method="post">
+              <label>Title</label>
+                  <input type="text" name="side-Title" class="form-control" placeholder="Title" required autofocus>
+                  <br>
+                  <label>End Date</label>
+                  <input type="text" name="side-EndDate" class="form-control" placeholder="End Date" required autofocus>
+                  <br>
+                  <label>Goal Amount</label>
+                  <input type="text" name="side-Amount" class="form-control" placeholder="Amount" required autofocus>
+                  <br>
+                  <label>Description</label>
+                  <textarea class="form-control" name="side-newDescription">Description...</textarea>
+                  <br>
+                  <input id="filebutton" name="side-newFile" class="input-file" type="file">
+
+                  <br>
+                  <div class="modal-footer">
+                      <button class="btn btn-lg btn-primary btn-block" type="submit" name="side-submit-newPrj" value="Send">Submit</button>
+                    </div>
+                  </form>
+          </div>
+        
+        </div>
+      </div>
+  </div>
+</div>
+<!-- END NAV BAR -->
+
+
+
+<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js\carousel.js"></script>
+
+</body>
+</html>
+
+
+<!--
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src="plugin\jquery.js"></script>
+<script>
+	$('#myCarousel').carousel({
+		interval:   4000
+	});
+</script>
+</body>
+</html>-->

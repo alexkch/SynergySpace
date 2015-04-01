@@ -34,9 +34,26 @@ function userMenu() {
 			<div id="account">
 				<ul>
 					<li><a href="/profile.php"><span class="fa fa-cogs"></span>My Account</a></li>
+					<li><span class="nav_trigger">
+              				<i class="fa fa-user" style="margin-right:80px;"></i>
+          				</span></li>
+					
 					<li><a href="/login.php"><span class="fa fa-sign-out"></span>Logout</a></li>
 				</ul>
 			</div>
-		</header>';
+		</header>
+
+		<!-- Sidebar -->
+		<div id="push_sidebar">
+  			<ul class="list-unstyled">
+			    <li><a href="#"><span class="fa fa-home"></span>Home</a></li>
+			    <li><a href="#"><span class="fa fa-user"></span>Profile</a></li>
+			    <li><a href="#" data-toggle="modal" data-target="#createPrjSidebar"><span class="fa fa-plus"></span>New Project</a></li>
+			    <li><a href="#"><span class="fa fa-folder-open-o"></span>Existing Projects</a></li>
+			    <li><a href="#"><span class="fa fa-envelope"></span>Messages</a></li>
+			    <li><a href="#"><span class="fa fa-bar-chart"></span>Chart</a></li>
+			    <li><a href="#"><span class="fa fa-star"></span>Favourites</a></li>
+			</ul>
+		</div>';
 }
 ?>
