@@ -28,8 +28,9 @@ background-color: #F1F1F1;
 
 
 #push_sidebar {
+	padding-top: 60px;
 	background: #31373d;
-	border-left: 0px solid #ddd;
+	border-right: 0px solid #ddd;
 	bottom: 0;
 	color: #95A7B7;
 	right: 100%;
@@ -78,6 +79,7 @@ background-color: #F1F1F1;
 }
 
 /***********************************/
+
 
 #push_sidebar li a {
 	padding: 10px 15px 10px 5px;
