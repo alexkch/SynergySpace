@@ -12,6 +12,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> 
+<link rel="stylesheet" type="text/css" href="CSS/sidebar.css"> <!-- BOOTSTRAP -->
+
 <script type="text/javascript" src="src/login.js"async></script>
 </head>
 <?php
@@ -74,5 +77,10 @@ pg_close($dbconn);
 		</form> 
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
+
+<script src="js/plugin/jquery.js"></script>
+<script src="js/plugin/bootstrap.min.js"></script>
+<script src="js/sidebar.js"></script>
+
 </body>
 </html>

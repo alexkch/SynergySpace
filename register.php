@@ -9,8 +9,11 @@
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
 <link rel="stylesheet" type="text/css" href="CSS/register.css"> <!-- Register CSS Styling -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> 
+<link rel="stylesheet" type="text/css" href="CSS/sidebar.css"> <!-- BOOTSTRAP -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 
 <script type="text/javascript" async>
 	$(function() { //Document Ready Function

@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
 <link rel="stylesheet" type="text/css" href="CSS/building.css"> <!-- Building CSS Styling -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> 
+<link rel="stylesheet" type="text/css" href="CSS/sidebar.css"> <!-- BOOTSTRAP -->
 </head>
 <body>
 	<?php
@@ -46,6 +48,11 @@
 	</div>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
+
+<script src="js/plugin/jquery.js"></script>
+<script src="js/plugin/bootstrap.min.js"></script>
+<script src="js/sidebar.js"></script>
+
 </body>
 
 </html>

@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="CSS/global.css"> <!-- Global CSS Styling -->
 <link rel="stylesheet" type="text/css" href="CSS/register.css"> <!-- Delete CSS Styling -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> 
+<link rel="stylesheet" type="text/css" href="CSS/sidebar.css"> <!-- BOOTSTRAP -->
 </head>
 <?php
 session_start(); // Start PHP session to test if user is logged in.
