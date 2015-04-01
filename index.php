@@ -14,15 +14,6 @@
 <link rel="stylesheet" type="text/css" href="CSS/sidebar.css"> 
 </head>
 <body>
-	<?php
-		session_start();
-		include 'functions/menu.php';
-		if (isset($_SESSION['username'])) {
-			userMenu();
-		} else {
-			defaultMenu();
-		}
-	?>
 	<section>
 		<div id="splash">
 			<img src="/img/header.jpg"/>
@@ -44,6 +35,17 @@
 			</fieldset>
 		</form>
     </section>
+
+    <?php
+		session_start();
+		include 'functions/menu.php';
+		if (isset($_SESSION['username'])) {
+			userMenu();
+		} else {
+			defaultMenu();
+		}
+	?>
+
 
 <!-- script DEFINE jquery first then bootstrap min, then custom js-->
 
