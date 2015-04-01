@@ -15,13 +15,7 @@
 <body>
 	<?php
 		session_start();
-		$username = $_SESSION['username'];
-		include 'functions/menu.php';
-		if (isset($_SESSION['username'])) {
-			userMenu();
-		} else {
-			defaultMenu();
-		}
+
 	?>
 	<aside>
 		<!-- TO DO -->
@@ -48,6 +42,17 @@
 	</div>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
+
+	<!-- Nav bar -->
+
+    <?php
+		include 'functions/menu.php';
+		if (isset($_SESSION['username'])) {
+			userMenu();
+		} else {
+			defaultMenu();
+		}
+	?>
 
 <script src="js/plugin/jquery.js"></script>
 <script src="js/plugin/bootstrap.min.js"></script>

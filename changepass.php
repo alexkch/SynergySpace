@@ -65,12 +65,7 @@ pg_close($dbconn);
 <body>
 	<?php
 		session_start();
-		include 'functions/menu.php';
-		if (isset($_SESSION['username'])) {
-			userMenu();
-		} else {
-			defaultMenu();
-		}
+
 	?>
 	<section>
 		<form id='register' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method='post' accept-charset='UTF-8' onsubmit="return confirm('Are you sure you want to change your password?');">
@@ -87,5 +82,16 @@ pg_close($dbconn);
 		</form>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
+
+	<!-- Nav bar -->
+
+    <?php
+		include 'functions/menu.php';
+		if (isset($_SESSION['username'])) {
+			userMenu();
+		} else {
+			defaultMenu();
+		}
+	?>
 </body>
 </html>

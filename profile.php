@@ -22,15 +22,7 @@ if (!isset($username) || empty($username)) {
 }
 ?>
 <body>
-	<?php
-		session_start();
-		include 'functions/menu.php';
-		if (isset($_SESSION['username'])) {
-			userMenu();
-		} else {
-			defaultMenu();
-		}
-	?>
+
 	<nav></nav>
 	<aside>
 		<a href="/updateuser.php"><span class="fa fa-pencil"></span>Update Account Information</a>
@@ -60,6 +52,19 @@ if (!isset($username) || empty($username)) {
 	</div>
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
+
+<!-- Nav bar -->
+
+    <?php
+		include 'functions/menu.php';
+		if (isset($_SESSION['username'])) {
+			userMenu();
+		} else {
+			defaultMenu();
+		}
+	?>
+
+
 
 <script src="js/plugin/jquery.js"></script>
 <script src="js/plugin/bootstrap.min.js"></script>

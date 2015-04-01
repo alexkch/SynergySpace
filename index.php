@@ -1,3 +1,7 @@
+    <?php
+		session_start();
+		?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +41,9 @@
 		</form>
     </section>
 
+<!-- Nav bar -->
+
     <?php
-		session_start();
 		include 'functions/menu.php';
 		if (isset($_SESSION['username'])) {
 			userMenu();
