@@ -1,0 +1,27 @@
+/**
+ * Aside navigation
+ */
+aside {
+	position: fixed;
+	left: 0;
+	top: 65px;
+	bottom: 45px;
+	width: 250px;
+	background: #eee;
+}
+aside a {
+	font-size: 13px;
+	padding: 10px 0;
+	float: left;
+	display: block;
+	width: 100%;
+	color: #111F50;
+	text-decoration: none;
+}
+aside a:hover {
+	background: #888;
+	color: #fff;
+}
+aside a span {
+	padding: 0 10px 0 15px;
+}

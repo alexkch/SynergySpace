@@ -1,0 +1,21 @@
+#absoulte_wrapper {
+	position: absolute;
+	top: 140px;
+    left: 380px;
+
+}
+
+
+/* relative wrapper, relative to 
+ *
+ */
+#relative_wrapper {
+	position: relative;
+	right: 15px;
+
+}
+
+.htab {
+    text-align: right;
+    color: #ffffff;
+} 
