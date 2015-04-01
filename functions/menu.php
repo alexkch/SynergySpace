@@ -31,13 +31,12 @@ function userMenu() {
 					</button>
 				</form>
 			</div>
-			<span class="nav_trigger">
-              				<i class="fa fa-user" style="margin-right:80px;"></i>
-          				</span>
+			
 			<div id="account">
 				<ul>
 					<li><a href="/profile.php"><span class="fa fa-cogs"></span>My Account</a></li>			
 					<li><a href="/login.php"><span class="fa fa-sign-out"></span>Logout</a></li>
+					<li><a class="nav_trigger" href="#"><span class="fa fa-user"></span>Menu</a></li>
 				</ul>
 			</div>
 		</header>
