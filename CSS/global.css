@@ -25,7 +25,7 @@ header {
     color: #fff;
     height: 65px;
     border-bottom: 5px solid #eee;
-    z-index: 99;
+    z-index: 0;
 }
 header a, header a:visited, header a:hover {
 	color: #fff;
@@ -104,7 +104,7 @@ header #account {
         top: 0px; right: 0px;
         text-align: left;
 	background: #303E73;
-	z-index: 100;
+	z-index: 1;
 }
 
 header ul {
