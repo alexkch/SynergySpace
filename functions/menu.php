@@ -7,12 +7,18 @@ function defaultMenu () {
       <div class="row">
           
   <div class="col-md-2">
-    <a href="/index.php" class="white-txt"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
+    <a href="/index.php" style="color: #F1F1F1;"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
   </div>
 
-      <div class="col-md-2">     
-          <a href="/register.php"><span class="fa fa-plus"></span>Create an Account</a>
-          <a href="/login.php"><span class="fa fa-sign-in"></span>Login</a>
+      <div class="col-md-2">
+          <span class="nav_register">
+              <a href="/register.php"><span class="fa fa-plus">
+              <i class="fa fa-plus" style="margin-right:80px;"></i>New Account
+              </a>
+          </span>
+          <span class="nav_login">
+            <a href="/login.php"><i class="fa fa-sign-in"></i>Login</a>
+          </span>     
         </div>
 
         <div class="col-md-6">
@@ -53,7 +59,7 @@ function userMenu() {
       <div class="row">
           
 	<div class="col-md-2">
-		<a href="/index.php" class="white-txt"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
+		<a href="/index.php" style="color: #F1F1F1;"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
 	</div>
 
       <div class="col-md-2">     
