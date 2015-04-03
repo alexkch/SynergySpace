@@ -31,9 +31,6 @@ if (!isset($username) || empty($username)) {
 		<a href="/delete.php"><span class="fa fa-trash-o"></span>Delete Account</a>
 	</aside>
 	<section>
-	<div id="gradient"></div>
-	<div id="card">
-
 <div class="container">
 		<div class="row">
 			<div class="col-md-4">
@@ -117,7 +114,7 @@ if (!isset($username) || empty($username)) {
 	</div>
 </div>
 
-	</div>
+
 	</section>
 	<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 
