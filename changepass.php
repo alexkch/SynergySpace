@@ -93,5 +93,10 @@ pg_close($dbconn);
 			defaultMenu();
 		}
 	?>
+
+<script src="js/plugin/jquery.js"></script>
+<script src="js/plugin/bootstrap.min.js"></script>
+<script src="js/sidebar.js"></script>
+
 </body>
 </html>

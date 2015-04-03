@@ -89,5 +89,9 @@ pg_close($dbconn);
 		}
 	?>
 
+<script src="js/plugin/jquery.js"></script>
+<script src="js/plugin/bootstrap.min.js"></script>
+<script src="js/sidebar.js"></script>
+
 </body>
 </html>

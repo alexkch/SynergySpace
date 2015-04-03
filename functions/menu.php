@@ -109,8 +109,8 @@ function userMenu() {
 <!-- Sidebar -->
 <div id="push_sidebar">
   <ul class="list-unstyled">
-    <li><a href="#"><span class="fa fa-home"></span>Home</a></li>
-    <li><a href="#"><span class="fa fa-user"></span>Profile</a></li>
+    <li><a href="index.php"><span class="fa fa-home"></span>Home</a></li>
+    <li><a href="profile.php"><span class="fa fa-user"></span>Profile</a></li>
     <li><a href="#" data-toggle="modal" data-target="#createPrjSidebar"><span class="fa fa-plus"></span>New Project</a></li>
     <li><a href="#"><span class="fa fa-folder-open-o"></span>Existing Projects</a></li>
     <li><a href="#"><span class="fa fa-envelope"></span>Messages</a></li>
