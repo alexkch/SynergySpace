@@ -24,8 +24,8 @@ if (!isset($username) || empty($username)) {
 ?>
 <body>
 
-<section>
-	<div class="container">
+<div class="section">
+	<div class="container" style="padding-top:55px;">
 			<div class="row">
 				<div class="col-md-4">
 	    	 		<div class="well profile">
@@ -107,7 +107,7 @@ if (!isset($username) || empty($username)) {
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
 <footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 
