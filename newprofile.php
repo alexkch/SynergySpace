@@ -66,7 +66,7 @@ if (!isset($username) || empty($username)) {
 	            
 
 	            <row>
-	                <section>
+	                <div class="section">
 	                    <div class="padding-top">
 
 	                        <div class="col-md-12">
@@ -95,7 +95,7 @@ if (!isset($username) || empty($username)) {
 
 
 	                </div>
-	              </section>
+	              </div>
 
 	            </row>
 	            </div>
