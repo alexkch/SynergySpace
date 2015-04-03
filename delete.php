@@ -42,18 +42,7 @@ if(isset($_POST['submit'])) {deleteUser();}
 pg_close($dbconn);
 ?>
 <body>
-	<header>
-		<a href="/index.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
-		<div id='search-box'>
-			<form action='/search' id='search-form' method='get' target='_top'>
-				<input id='search-text' name='q' placeholder='Search by postal code' type='text' autocomplete="off"/>
-				<button id='search-button' type='submit'>                     
-					<span class="fa fa-search"></span>
-				</button>
-			</form>
-		</div>
 
-	</header>
 	<section>
 		<form id='register' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method='post' accept-charset='UTF-8' onsubmit="return confirm('Are you sure you want to delete your account?');">
 			<fieldset >
