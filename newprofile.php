@@ -47,23 +47,7 @@ if (!isset($username) || empty($username)) {
 
              		   <div class="col-md-8 text-right">
 
-		<?php
-			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
-				or die('Could not connect: ' . pg_last_error());
-			
-			$query = "SET search_path TO synergy; SELECT * FROM users WHERE username='$username'";
-			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-			while ($data = pg_fetch_object($result)) {
-
-
-		                        echo '<h2>' . $data->name . '</h2>';
-		                        echo '<p><strong>BirthDate </strong>' . ' ' . $data->birthdate. '</p>';
-		                        echo '<p><strong>Sex: </strong>' . ' ' . $data->gender. '</p>';
-		                        echo '<p><strong>Phone: </strong>' . ' ' . $data->phonenumber . '</p>';
-		                   		
-		                        echo '<p><strong>Occupation: </strong>' . $data->occupation . '</p>';
-		                    	echo '<p><strong>HomeAddress: </strong>' $data->homeaddress . '</p>';
-		                    ?>
+		
 
 		                    <p><strong>Skills: </strong>
 		                        <span class="tags">html5</span> 
