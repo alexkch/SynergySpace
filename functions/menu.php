@@ -12,12 +12,14 @@ function defaultMenu () {
 
       <div class="col-md-2">
           <span class="nav_register">
-              <a href="/register.php"><span class="fa fa-plus">
-              <i class="fa fa-plus" style="margin-right:80px;"></i>New Account
+              <a href="/register.php" style="color: #F1F1F1;">
+              <i class="fa fa-plus" style="margin-right:80px;"></i>
               </a>
           </span>
           <span class="nav_login">
-            <a href="/login.php"><i class="fa fa-sign-in"></i>Login</a>
+            <a href="/login.php" style="color: #F1F1F1;">
+            <i class="fa fa-sign-in"></i>
+            </a>
           </span>     
         </div>
 
@@ -68,7 +70,7 @@ function userMenu() {
           </span>
 
           <span class="nav_logout">
-            <a href="/login.php"><i class="fa fa-power-off"></i></a>
+            <a href="/login.php" style="color: #F1F1F1;"><i class="fa fa-power-off"></i></a>
           </span>
         </div>
 
