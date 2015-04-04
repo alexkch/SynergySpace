@@ -33,7 +33,8 @@ function postBuilding() {
 	$city = $_POST['city'];
 	$country = $_POST['country'];
 	$capacity = $_POST['capacity'];
-	$query = pg_query("SET search_path TO synergy; INSERT INTO building(n_id,address,city,country,capacity,worknumber) VALUES ('$network','$address','$city','$country',$capacity,'$_SESSION[\"username\"]')")
+	$username = $_SESSION['username'];
+	$query = pg_query("SET search_path TO synergy; INSERT INTO building(n_id,address,city,country,capacity,worknumber) VALUES ('$network','$address','$city','$country',$capacity,'$username')")
 		or die('Query failed: ' . pg_last_error()); 
 	if($data = pg_fetch_object($query)) { 
 		header("Location: http://synergyspace309.herokuapp.com/profile.php");

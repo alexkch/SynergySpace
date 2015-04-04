@@ -50,13 +50,10 @@ if (!isset($username) || empty($username)) {
 		?>
 	</div>
 		<?php
-			$search=$_GET['q'];
-			$order=$_GET['order'];
-			if (empty($order)) {$order="b_id";}
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
-			
-			$query = "SET search_path TO synergy; SELECT * FROM building WHERE username='$_SESSION[\"username\"]';";
+			$username=$_SESSION['username'];
+			$query = "SET search_path TO synergy; SELECT * FROM building WHERE username='$username';";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
