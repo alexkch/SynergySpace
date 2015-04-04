@@ -21,7 +21,7 @@ CREATE TABLE users (
 ) ;
 
 CREATE TABLE building (
-  b_id integer PRIMARY KEY,
+  b_id integer SERIAL PRIMARY KEY,
   n_id varchar NOT NULL,
   address varchar NOT NULL,
   city varchar NOT NULL,
