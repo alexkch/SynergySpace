@@ -18,6 +18,12 @@
 </head>
 <?php
 session_start(); // Start PHP session to test if user is logged in.
+$username = $_SESSION['username'];
+if (!isset($username) || empty($username)) {
+      // They are not logged in. Redirect to login page with note code 1.
+	  header("Location: http://synergyspace309.herokuapp.com/login.php#note=1");
+      die();
+}
 // Connecting, selecting database
 $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
     or die('Could not connect: ' . pg_last_error());
