@@ -33,11 +33,10 @@ header {
  * Main Content
  */
 section {
-	background: #fff;
 	margin-top: 50px;
 	padding: 50px;
 	margin: 0 auto;
-	max-width: 1400px;
+	max-width: 100%;
 }
 
 /**
