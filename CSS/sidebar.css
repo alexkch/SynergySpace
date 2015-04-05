@@ -28,9 +28,18 @@ background-color: #F1F1F1;
 	color: #F1F1F1;
 }
 
+.nav_header a {
+
+	color: #F1F1F1;
+}
 
 .nav_link a:visited{
 
+	color: #F1F1F1;
+}
+
+.nav_header a:visited {
+	
 	color: #F1F1F1;
 }
 
