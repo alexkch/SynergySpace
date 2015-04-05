@@ -36,6 +36,9 @@
 				echo '<p>City: '.$data->city.'</p>';
 				echo '<p>Country: '.$data->country.'</p>';
 				echo '<p>Capacity: '.$data->capacity.'</p>';
+				echo '<form action="building.php" method="post">
+						<button type="submit"><span class="fa fa-plus"></span>Rent Space</button>
+					</form>';
 				echo '</div>';
 			}
 		?>
@@ -53,9 +56,9 @@
 				echo '<div class="user">';
 				echo '<span class="fa fa-user"></span>';
 				echo '<p>'.$data->username.'</p>';
-				echo '<p>City: '.$data->email.'</p>';
-				echo '<p>Country: '.$data->birthdate.'</p>';
-				echo '<p>Capacity: '.$data->gender.'</p>';
+				echo '<p>Email: '.$data->email.'</p>';
+				echo '<p>Birthdate: '.$data->birthdate.'</p>';
+				echo '<p>Gender: '.$data->gender.'</p>';
 				echo '</div>';
 			}
 		?>
