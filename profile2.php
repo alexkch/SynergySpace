@@ -60,16 +60,16 @@ if (!isset($username) || empty($username)) {
 	            	<div class="col-md-12 divider text-center">
 	            	<row>
 	                	<div class="col-md-5 emphasis">
-	                    	<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span><a href="newbuilding.php"> Add new space </a></button>
-	                    	<!--> <h2><strong>245</strong></h2>                    
-	                    	<p><small>Projects</small></p> <-->
+	                    	<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span><a class="white" href="newbuilding.php"> Add new space </a></button>
+	                    	<!-- <h2><strong>245</strong></h2>                    
+	                    	<p><small>Buildings</small></p> -->
 	               		</div>
 	                <div class="col-md-1"></div>
 	                <div class="col-md-3 emphasis">
-	                    <button class="btn btn-primary btn-block"><span class="fa fa-gear"></span><a href="changepass.php"> Change Password </a></button>
+	                    <button class="btn btn-primary btn-block"><span class="fa fa-gear"></span><a class="white" href="changepass.php"> Change Password </a></button>
 	                </div>
 	                <div class="col-md-3 emphasis">
-	                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span><a href="updateuser.php"> Edit </a></button>
+	                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span><a class="white" href="updateuser.php"> Edit </a></button>
 	                </div>
 	            </row>
 	            

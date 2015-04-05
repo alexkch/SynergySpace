@@ -5,6 +5,29 @@
     min-width: 1150px;
     }
 
+a.white {
+  color: white;
+}
+a.white:link {
+    color: white;
+}
+
+/* visited link */
+a.white:visited {
+    color: white;
+}
+
+/* mouse over link */
+a.white:hover {
+    color: white;
+}
+
+/* selected link */
+a.white:active {
+    color: white;
+}
+
+
 .divider 
 {
     border-top:1px solid rgba(0,0,0,0.1);
