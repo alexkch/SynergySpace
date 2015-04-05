@@ -56,13 +56,13 @@ $username = $_SESSION['username'];
 	            	<div class="col-md-12 divider text-center">
 	            	<row>
 	                	<div class="col-md-5 emphasis">
-	                    	<button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Projects </button>
-	                    	<h2><strong>245</strong></h2>                    
-	                    	<p><small>Projects</small></p>
-	                </div>
+	                    	<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Add new space </button>
+	                    	<!--> <h2><strong>245</strong></h2>                    
+	                    	<p><small>Projects</small></p> <-->
+	               		</div>
 	                <div class="col-md-1"></div>
 	                <div class="col-md-3 emphasis">
-	                    <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+	                    <button class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Follow </button>
 	                </div>
 	                <div class="col-md-3 emphasis">
 	                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
