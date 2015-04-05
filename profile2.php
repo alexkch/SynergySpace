@@ -42,13 +42,11 @@ $username = $_SESSION['username'];
 								$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 								while ($data = pg_fetch_object($result)) {
 									echo '<h2>'.$data->name.'</h2>';
-									echo '<p> Occupation: '.$data->occupation.'</p>';
-									echo '<p>Birth Date: '.$data->birthdate.'</p>';
-									echo '<p>Gender: '.$data->gender.'</p>';
-									echo '<p>Address: '.$data->homeaddress.'</p>';
-									echo '<p>Phone: '.$data->phonenumber.'</p>';
 									echo '<p><strong>Occupation: </strong><span class="tags">' .$data->occupation. '</span></p> '
 									echo '<p><strong>Address: </strong><span class="tags">' .$data->homeaddress. '</span></p> '
+									echo '<p>Birth Date: '.$data->birthdate.'</p>';
+									echo '<p>Gender: '.$data->gender.'</p>';
+									echo '<p>Phone: '.$data->phonenumber.'</p>';
 								}
 							?>
 	                		</div>             
@@ -56,16 +54,16 @@ $username = $_SESSION['username'];
 	            	<div class="col-md-12 divider text-center">
 	            	<row>
 	                	<div class="col-md-5 emphasis">
-	                    	<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Add new space </button>
+	                    	<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span><a href="newbuilding.php"> Add new space </a></button>
 	                    	<!--> <h2><strong>245</strong></h2>                    
 	                    	<p><small>Projects</small></p> <-->
 	               		</div>
 	                <div class="col-md-1"></div>
 	                <div class="col-md-3 emphasis">
-	                    <button class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Follow </button>
+	                    <button class="btn btn-primary btn-block"><span class="fa fa-gear"></span><a href="changepass.php"> Change Password </a></button>
 	                </div>
 	                <div class="col-md-3 emphasis">
-	                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
+	                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span><a href="updateuser.php"> Edit </a></button>
 	                </div>
 	            </row>
 	            
@@ -80,7 +78,7 @@ $username = $_SESSION['username'];
 	                              <div class="panel panel-default">
 	                                  <div class="panel-heading">
 	                                    <h4 class="panel-title">
-	                                      <a href="#collpase1" data-toggle="collapse" data-parent="accordion">Recent Projects</a>
+	                                      <a href="#collpase1" data-toggle="collapse" data-parent="accordion">Buildings</a>
 	                                    </h4>
 	                                </div>
 	                                  <div id="collpase1" class="panel-collapse collapse in">
@@ -94,9 +92,9 @@ $username = $_SESSION['username'];
 															$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 															while ($data = pg_fetch_object($result)) {
 
-																echo '<article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">';
+																echo '<article class="white-panel">';
 																echo '<span class="fa fa-building-o fa-2x"></span>';
-																echo '<h4><a href="/building.php?id='.$data->b_id.'">'.$data->address.'<span class="fa fa-building-o fa-2x"></span></h2></a></h4>';
+																echo '<h4><a href="/building.php?id='.$data->b_id.'">'.$data->address.'</h2></a></h4>';
 																echo '<p>City: '.$data->city.'</p>';
 																echo '<p>Country: '.$data->country.'</p>';
 																echo '<p>Capacity: '.$data->capacity.'</p>';
