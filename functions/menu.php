@@ -13,7 +13,7 @@ function defaultMenu () {
   </div>
 
         <div class="col-md-2">     
-          <span class="nav_link">
+          <span class="nav_header">
               <a href="/register.php"><i class="fa fa-user-plus" style="margin-right:80px;"></i></a>
           </span>
 
@@ -60,8 +60,10 @@ function userMenu() {
       <div class="row">
           
 	<div class="col-md-2">
+    <span class="nav_header">
 		<a href="/index.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
-	</div>
+	  </span>
+  </div>
 
       <div class="col-md-2">     
           <span class="nav_trigger">
