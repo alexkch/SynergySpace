@@ -133,19 +133,6 @@
 
 
 
-  <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-      <div class="row">
-    
-    <div class="col-md-2">
-      <a class="navbar-brand" href="#">Startup</a>
-    </div>
-
-    <div class="col-md-2">
-    </div>
-
-    <div class="col-md-5">
-    </div>
 
 
     <!-- Footer -->
