@@ -63,11 +63,6 @@ body {
     background-color: rgba(255,255,255,0.8);
 }
 
-/* Custom Horizontal Rule */
-
-
-
-
 /* Header */
 
 .img1 {
@@ -75,7 +70,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(img/7.jpg) no-repeat center center scroll;
+    background: url(../img/1.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -99,7 +94,7 @@ body {
     width: 100%;
     height: 200px;
     color: #fff;
-    background: url(img/9.jpg) no-repeat center center scroll;
+    background: url(../img/2.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -115,7 +110,7 @@ body {
 	height: 100%;
 	width: 100%;
  	background-position:right top;
-	background: url("img/6.jpg");
+	background: url(../img/3.jpg);
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
