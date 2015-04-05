@@ -18,11 +18,16 @@ body {
  * Header
  */
 
-.navbar a, .navbar a:visited, .navbar a:hover {
-	color: #fff;
-	text-decoration: none;
+header {
+    position: fixed;
+    top: 0px; 
+    left: 0px; right: 0px;
+    background: #5C6896;
+    color: #fff;
+    height: 65px;
+    border-bottom: 5px solid #eee;
+    z-index: 0;
 }
-.navbar a:visited {color: #fff;}
 
 /**
  * Main Content
