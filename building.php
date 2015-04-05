@@ -43,7 +43,7 @@
 			$query = "SET search_path TO synergy; SELECT * FROM building WHERE b_id='$id'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			
-			$q2 = "SET search_path TO synergy; SELECT * FROM renting WHERE b_id='$id' AND username='$username'"
+			$q2 = "SET search_path TO synergy; SELECT * FROM renting WHERE b_id='$id' AND username='$username'";
 			$r2 = pg_query($q2) or die('Query failed: ' . pg_last_error());
 			
 			while ($data = pg_fetch_object($result)) {
