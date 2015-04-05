@@ -10,9 +10,14 @@ function defaultMenu () {
     <a href="/index.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
   </div>
 
-      <div class="col-md-2">     
-          <a href="/register.php"><span class="fa fa-plus"></span>Create an Account</a>
-          <a href="/login.php"><span class="fa fa-sign-in"></span>Login</a>
+        <div class="col-md-2">     
+          <span class="nav_link">
+              <a href="/register.php"><i class="fa fa-user" style="margin-right:80px;"></i></a>
+          </span>
+
+          <span class="nav_link">
+            <a href="/login.php"><i class="fa fa-power-off"></i></a>
+          </span>
         </div>
 
         <div class="col-md-6">
@@ -62,7 +67,7 @@ function userMenu() {
           </span>
 
           <span class="nav_logout">
-            <i class="fa fa-power-off"></i>
+            <a href="/login.php"><i class="fa fa-power-off"></i></a>
           </span>
         </div>
 
