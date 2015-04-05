@@ -48,8 +48,8 @@ if (!isset($username) || empty($username)) {
 								$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 								while ($data = pg_fetch_object($result)) {
 									echo '<h2>'.$data->name.'</h2>';
-									echo '<p><strong>Occupation: </strong><span class="tags">' .$data->occupation. '</span></p> '
-									echo '<p><strong>Address: </strong><span class="tags">' .$data->homeaddress. '</span></p> '
+									echo '<p><strong>Occupation: </strong><span class="tags">' .$data->occupation. '</span></p> ';
+									echo '<p><strong>Address: </strong><span class="tags">' .$data->homeaddress. '</span></p> ';
 									echo '<p>Birth Date: '.$data->birthdate.'</p>';
 									echo '<p>Gender: '.$data->gender.'</p>';
 									echo '<p>Phone: '.$data->phonenumber.'</p>';
