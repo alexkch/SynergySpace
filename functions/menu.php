@@ -66,7 +66,7 @@ function userMenu() {
               <i class="fa fa-user" style="margin-right:80px;"></i>
           </span>
 
-          <span class="nav_logout">
+          <span class="nav_link">
             <a href="/login.php"><i class="fa fa-power-off"></i></a>
           </span>
         </div>
