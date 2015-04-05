@@ -94,7 +94,7 @@ body {
     width: 100%;
     height: 300px;
     color: #fff;
-    background: url(../img/2.jpg) no-repeat center center scroll;
+    background: url(../img/3.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -110,7 +110,7 @@ body {
 	height: 100%;
 	width: 100%;
  	background-position:right top;
-	background: url(../img/3.jpg);
+	background: url(../img/2.jpg);
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
