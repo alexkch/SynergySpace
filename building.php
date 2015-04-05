@@ -21,13 +21,14 @@
 		function rentBuilding() { 
 			$username = $_SESSION['username'];
 			$id=$_GET['id'];
+			if (empty($id)) {$id=$_POST['id'];} //Get b_id whether POST or GET method used
 			$query = pg_query("SET search_path TO synergy; INSERT INTO renting VALUES ('$username','$id');")
 				or die('Query failed: ' . pg_last_error()); 
 			if($query) { 
 				header("Location: http://synergyspace309.herokuapp.com/building.php?id=".$id);
 			} 
 		} 
-		if(isset($_POST['submit'])) { rentBuilding(); }
+		if($_SERVER['REQUEST_METHOD'] == 'POST') { rentBuilding(); }
 
 		// Closing connection
 		pg_close($dbconn);
@@ -36,15 +37,17 @@
 	<div id="info">
 		<?php
 			$id=$_GET['id'];
+			if (empty($id)) {$id=$_POST['id'];} //Get b_id whether POST or GET method used
+			
 			$username=$_SESSION['username'];
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			
 			$query = "SET search_path TO synergy; SELECT * FROM building WHERE b_id='$id'";
-			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+			$result = pg_query($query) or die('Query failed: ' . pg_last_error()); // Get building based on GET or POST id
 			
 			$q2 = "SET search_path TO synergy; SELECT * FROM renting WHERE b_id='$id' AND username='$username'";
-			$r2 = pg_query($q2) or die('Query failed: ' . pg_last_error());
+			$r2 = pg_query($q2) or die('Query failed: ' . pg_last_error()); // Test if user rented space
 			
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
@@ -53,14 +56,18 @@
 				echo '<p>City: '.$data->city.'</p>';
 				echo '<p>Country: '.$data->country.'</p>';
 				echo '<p>Capacity: '.$data->capacity.'</p>';
-				if (!empty($username)) {
-					echo '<form action="building.php" method="get">
+				if (!empty($username)) { // Logged in
+					if (pg_num_rows($r2)==0) { // user has not rented space
+						echo '<form action="building.php" method="post">
 						  <input type="hidden" name="id" value="'.$id.'"/>
-						  <button type="submit">';
-						  if ($r2) {echo '<span class="fa fa-plus"></span>Rent Space';}
-						  else {echo '<span class="fa fa-minus"></span>Stop Renting Space';}
-					echo '</button>
+						  <button type="submit" name="submit"><span class="fa fa-plus"></span>Rent Space</button>
 						  </form>';
+					} else { // user has rented space
+						echo '<form action="building.php" method="post">
+						  <input type="hidden" name="id" value="'.$id.'"/>
+						  <button type="submit" name="submit"><span class="fa fa-minus"></span>Stop Renting Space</button>
+						  </form>';
+					}
 				}
 				echo '</div>';
 			}
@@ -70,6 +77,7 @@
 		<p>Users renting this space:</p>
 		<?php
 			$id=$_GET['id'];
+			if (empty($id)) {$id=$_POST['id'];} //Get b_id whether POST or GET method used
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			$username=$_SESSION['username'];
