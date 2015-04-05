@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/sidebar.css"> <!-- BOOTSTRAP -->
 <link rel="stylesheet" type="text/css" href="CSS/newprofile.css"> <!-- CUSTOM -->
 </head>
+
 <?php
 session_start(); // Start PHP session to test if user is logged in.
 $username = $_SESSION['username'];
@@ -38,8 +39,21 @@ if (!isset($username) || empty($username)) {
 
 	             		   <div class="col-md-8 text-right">
 
-			
-
+	             		   	<?php
+								$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
+									or die('Could not connect: ' . pg_last_error());
+								
+								$query = "SET search_path TO synergy; SELECT * FROM users WHERE username='$username'";
+								$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+								while ($data = pg_fetch_object($result)) {
+									echo '<h2>'.$data->name.'</h2>';
+									echo '<p> Occupation: '.$data->occupation.'</p>';
+									echo '<p>Birth Date: '.$data->birthdate.'</p>';
+									echo '<p>Gender: '.$data->gender.'</p>';
+									echo '<p>Address: '.$data->homeaddress.'</p>';
+									echo '<p>Phone: '.$data->phonenumber.'</p>';
+								}
+							?>
 			                    <p><strong>Skills: </strong>
 			                        <span class="tags">html5</span> 
 			                        <span class="tags">css3</span>
@@ -72,7 +86,7 @@ if (!isset($username) || empty($username)) {
 	                        <div class="col-md-12">
 
 	                          <div class="panel-group" id="accordion">
-	                              <div class="panel panel-warning">
+	                              <div class="panel panel-default">
 	                                  <div class="panel-heading">
 	                                    <h4 class="panel-title">
 	                                      <a href="#collpase1" data-toggle="collapse" data-parent="accordion">Recent Projects</a>
@@ -82,9 +96,24 @@ if (!isset($username) || empty($username)) {
 	                                    <div class="panel-body">
 	                                        <section class="align-box">
 	                                          <article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">
-	                                                <h4><a href="#">Title 8</a></h4>
-	                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	                                          </article>
+
+	                                          			<?php
+															$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
+																or die('Could not connect: ' . pg_last_error());
+															$username=$_SESSION['username'];
+															$query = "SET search_path TO synergy; SELECT * FROM building WHERE username='$username';";
+															$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+															while ($data = pg_fetch_object($result)) {
+
+																echo '<article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">'
+																echo '<span class="fa fa-building-o fa-2x"></span>';
+																echo '<h4><a href="/building.php?id='.$data->b_id.'">'.$data->address.'<span class="fa fa-building-o fa-2x"></span></h2></a></h4>';
+																echo '<p>City: '.$data->city.'</p>';
+																echo '<p>Country: '.$data->country.'</p>';
+																echo '<p>Capacity: '.$data->capacity.'</p>';
+																echo '</article>';
+															}
+														?>
 	                                      </section>
 	                                    </div>
 	                                  </div>
@@ -121,6 +150,7 @@ if (!isset($username) || empty($username)) {
 			defaultMenu();
 		}
 	?>
+
 
 
 
