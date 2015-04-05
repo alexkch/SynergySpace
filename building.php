@@ -15,11 +15,23 @@
 <body>
 	<?php
 		session_start();
+		// Connecting, selecting database
+		$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6")
+			or die('Could not connect: ' . pg_last_error());
+		function rentBuilding() { 
+			$username = $_SESSION['username'];
+			$id=$_GET['id'];
+			$query = pg_query("SET search_path TO synergy; INSERT INTO renting VALUES ('$username','$id');")
+				or die('Query failed: ' . pg_last_error()); 
+			if($query) { 
+				header("Location: http://synergyspace309.herokuapp.com/building.php?id=".$id);
+			} 
+		} 
+		if(isset($_POST['submit'])) { postBuilding(); }
 
+		// Closing connection
+		pg_close($dbconn);
 	?>
-	<aside>
-		<!-- TO DO -->
-	</aside>
 	<section>
 	<div id="info">
 		<?php
