@@ -50,7 +50,7 @@ background-color: #F1F1F1;
 	bottom: 0;
 	color: #95A7B7;
 	right: 100%;
-	z-index = 100;
+	z-index: 100;
 	overflow: auto;
 	position: fixed;
 	top: 0;
