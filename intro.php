@@ -1,17 +1,18 @@
-
+<?php
+  session_start();
+?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-	<meta charset="utf-8">
-	<title>Homepage</title>
-	<meta name="description" content="Hello World">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For MOBILE -->
+<title>SynergySpace</title>
 	
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css">
   
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -123,7 +124,7 @@
 <section>   
     <aside class="img2">
         <div class="text-vertical-center">
-          <a href="#section3" class="btn btn-dark btn-lg btn-placement">Sign up now</a>
+          <a href="home.php" class="btn btn-dark btn-lg btn-placement">Sign up now</a>
         </div>
     </aside>
 </section>
