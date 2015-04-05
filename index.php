@@ -1,6 +1,6 @@
-    <?php
-		session_start();
-		?>
+<?php
+	session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -40,6 +40,7 @@
 			</fieldset>
 		</form>
     </section>
+<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 
 <!-- Nav bar -->
 
