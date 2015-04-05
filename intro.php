@@ -36,7 +36,7 @@
     </header>
 
     <!-- About -->
-    <section id="about" class="whitespace">
+    <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
