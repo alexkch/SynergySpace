@@ -45,7 +45,7 @@ function SignIn() {
 		} else { //Logged in
 			session_start();
 			$_SESSION['username'] = $userName;
-			header("Location: http://synergyspace309.herokuapp.com/profile2.php"); //Redirect to Profile
+			header("Location: http://synergyspace309.herokuapp.com/profile.php"); //Redirect to Profile
 			die();			
 		}
 	} 
