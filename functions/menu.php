@@ -7,7 +7,9 @@ function defaultMenu () {
       <div class="row">
           
   <div class="col-md-2">
+  <span class="nav_link">
     <a href="/index.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
+  </span>
   </div>
 
         <div class="col-md-2">     
