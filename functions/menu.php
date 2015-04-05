@@ -12,11 +12,11 @@ function defaultMenu () {
 
         <div class="col-md-2">     
           <span class="nav_link">
-              <a href="/register.php"><i class="fa fa-user" style="margin-right:80px;"></i></a>
+              <a href="/register.php"><i class="fa fa-user-plus" style="margin-right:80px;"></i></a>
           </span>
 
           <span class="nav_link">
-            <a href="/login.php"><i class="fa fa-power-off"></i></a>
+            <a href="/login.php"><i class="fa fa-sign-in"></i></a>
           </span>
         </div>
 
