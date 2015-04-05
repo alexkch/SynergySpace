@@ -35,13 +35,13 @@ function defaultMenu () {
           <ul class="nav navbar-nav navbar-right">
               <li><a href="index.php"><span class="fa fa-info-circle"></span> About Us</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i>Contact Us</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-envelope-o"></i>Contact Us</a>
                   <ul class="dropdown-menu" role="menu">
                       <li><a href="#"><span class="fa fa-facebook-square"></span> Our Facebook</a></li>
                       <li><a href="#"><span class="fa fa-twitter-square"></span> Our Twitter</a></li>
                     <li><a href="#"><span class="fa fa-youtube-play"></span> Our Youtube</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><span class="fa fa-envelope-o"></span> Contact Us</a></li>
+                    <li><a href="#"><span class="fa fa-share"></span> Contact Us</a></li>
                 </ul>
               </li>
           </ul>
@@ -84,17 +84,15 @@ function userMenu() {
 
         <div class="col-md-2">
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><span class="fa fa-question-circle"></span> FAQ</a></li>
+              <li><a href="index.php"><span class="fa fa-info-circle"></span> About Us</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> About Us</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-envelope-o"></i>Contact Us</a>
                   <ul class="dropdown-menu" role="menu">
                       <li><a href="#"><span class="fa fa-facebook-square"></span> Our Facebook</a></li>
                       <li><a href="#"><span class="fa fa-twitter-square"></span> Our Twitter</a></li>
                     <li><a href="#"><span class="fa fa-youtube-play"></span> Our Youtube</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><span class="fa fa-envelope-o"></span> Contact Us</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><span class="fa fa-info-circle"></span> About Us</a></li>
+                    <li><a href="#"><span class="fa fa-share"></span> Contact Us</a></li>
                 </ul>
               </li>
           </ul>
@@ -110,7 +108,6 @@ function userMenu() {
   <ul class="list-unstyled">
     <li><a href="/"><span class="fa fa-home"></span>Home</a></li>
     <li><a href="/profile.php"><span class="fa fa-user"></span>Profile</a></li>
-    <li><a href="/profile2.php"><span class="fa fa-user"></span>Profile2</a></li>
     <li><a href="/newbuilding.php"><span class="fa fa-plus"></span>Post New Space</a></li>
 	<li><a href="/updateuser.php"><span class="fa fa-pencil"></span>Update Account Information</a></li>
 	<li><a href="/changepass.php"><span class="fa fa-unlock-alt"></span>Change Account Password</a></li>
