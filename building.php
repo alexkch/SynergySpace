@@ -21,7 +21,7 @@
 		function rentBuilding() { 
 			$username = $_SESSION['username'];
 			$id=$_GET['id'];
-			$query = pg_query("SET search_path TO synergy; INSERT INTO renting VALUES ('$username',$id);")
+			$query = pg_query("SET search_path TO synergy; INSERT INTO renting VALUES ('$username','$id');")
 				or die('Query failed: ' . pg_last_error()); 
 			if($query) { 
 				header("Location: http://synergyspace309.herokuapp.com/building.php?id=".$id);
@@ -39,7 +39,7 @@
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			
-			$query = "SET search_path TO synergy; SELECT * FROM building WHERE b_id=$id";
+			$query = "SET search_path TO synergy; SELECT * FROM building WHERE b_id='$id'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
@@ -63,7 +63,7 @@
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			$username=$_SESSION['username'];
-			$query = "SET search_path TO synergy; SELECT * FROM renting,users WHERE b_id=$id AND renting.username=users.username;";
+			$query = "SET search_path TO synergy; SELECT * FROM renting,users WHERE b_id='$id' AND renting.username=users.username;";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="user">';
