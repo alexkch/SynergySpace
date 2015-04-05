@@ -31,7 +31,7 @@
             <h3>A personal space for your ideas</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
-            <a href="#about" class="btn btn-dark btn-lg">Go to Site</a>
+            <a href="index.php" class="btn btn-dark btn-lg" style="color: white;">Go to Site</a>
         </div>
     </header>
 
