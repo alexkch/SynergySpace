@@ -19,7 +19,7 @@
 
 </head>
 <body>
-	<section>
+	<section class="index">
 		<div id="splash">
 			<img src="/img/header.jpg"/>
 			<h1>SynergySpace</h1>
