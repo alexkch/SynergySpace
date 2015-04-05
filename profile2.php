@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For MOBILE -->
-<title>Profile - SynergySpace</title>
+<title>Profile2 - SynergySpace</title>
 
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
@@ -47,14 +47,10 @@ $username = $_SESSION['username'];
 									echo '<p>Gender: '.$data->gender.'</p>';
 									echo '<p>Address: '.$data->homeaddress.'</p>';
 									echo '<p>Phone: '.$data->phonenumber.'</p>';
+									echo '<p><strong>Occupation: </strong><span class="tags">' .$data->occupation. '</span></p> '
+									echo '<p><strong>Address: </strong><span class="tags">' .$data->homeaddress. '</span></p> '
 								}
 							?>
-			                    <p><strong>Skills: </strong>
-			                        <span class="tags">html5</span> 
-			                        <span class="tags">css3</span>
-			                        <span class="tags">jquery</span>
-			                        <span class="tags">bootstrap3</span>
-			                    </p>
 	                		</div>             
 	            		</div>            
 	            	<div class="col-md-12 divider text-center">
@@ -90,8 +86,6 @@ $username = $_SESSION['username'];
 	                                  <div id="collpase1" class="panel-collapse collapse in">
 	                                    <div class="panel-body">
 	                                        <section class="align-box">
-	                                          <article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">
-
 	                                          			<?php
 															$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 																or die('Could not connect: ' . pg_last_error());
@@ -100,7 +94,7 @@ $username = $_SESSION['username'];
 															$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 															while ($data = pg_fetch_object($result)) {
 
-																echo '<article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">'
+																echo '<article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">';
 																echo '<span class="fa fa-building-o fa-2x"></span>';
 																echo '<h4><a href="/building.php?id='.$data->b_id.'">'.$data->address.'<span class="fa fa-building-o fa-2x"></span></h2></a></h4>';
 																echo '<p>City: '.$data->city.'</p>';
