@@ -1,32 +1,4 @@
 /**
- * Aside navigation
- */
-aside {
-	position: fixed;
-	left: 0;
-	top: 65px;
-	bottom: 45px;
-	width: 250px;
-	background: #eee;
-}
-aside a {
-	font-size: 13px;
-	padding: 10px 0;
-	float: left;
-	display: block;
-	width: 100%;
-	color: #111F50;
-	text-decoration: none;
-}
-aside a:hover {
-	background: #888;
-	color: #fff;
-}
-aside a span {
-	text-align: center;
-	width: 40px;
-}
-/**
  * Profile Content
  */
 .left {
@@ -48,14 +20,11 @@ aside a span {
 
 #card {
   position: relative;
-  max-width: 1000px;
   height: 300px;
   padding: 25px;
-  margin: 20px;
   background: #ebebeb;
   z-index: 5;
-  border: 1px solid #cbc9c9;
-  border-radius: 7px;
+  border-bottom: 1px solid #cbc9c9;
 }
 
 #card img {
@@ -79,4 +48,27 @@ aside a span {
 
 #card span {
   font-size: 14px;
+}
+section > h2 {
+	text-align: center;
+	margin: 10px 0;
+	position: relative;
+}
+section > h2::before,section > h2::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 35%;
+	height: 1px;
+	background-color: #888;
+}
+section > h2::after {
+	right: 0;
+}
+.building {
+  padding: 25px;
+  background: #fff;
+  z-index: 5;
+  border-bottom: 1px solid #eee;
 }
