@@ -80,7 +80,7 @@ body {
 /* Services */
 
 .services {
-    padding: 140px 0;
+    padding: 50px 0;
 }
 
 .service-item {
@@ -92,7 +92,7 @@ body {
 .img2 {
     display: table;
     width: 100%;
-    height: 200px;
+    height: 400px;
     color: #fff;
     background: url(../img/2.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -101,7 +101,7 @@ body {
     -o-background-size: cover;
 }
 
-/* Img 3 */
+/* Img 3 (NOT IN USE ANYMORE) */
 
 .img3 {
 
