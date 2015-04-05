@@ -17,9 +17,10 @@ background-color: #F1F1F1;
 	font-size: 26px;
 	margin: 5px 20px 0 50px;
   	float:right;
+  	color: #F1F1F1;
 }
 
-.nav_logout {
+.nav_link {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 26px;
@@ -27,6 +28,19 @@ background-color: #F1F1F1;
   float:right;
 }
 
+.nav_link a {
+	color: #F1F1F1;
+}
+
+.nav_link a:hover{
+
+	color: #F1F1F1;
+}
+
+.nav_link a:visited{
+
+	color: #F1F1F1;
+}
 
 #push_sidebar {
 	padding-top: 60px;
