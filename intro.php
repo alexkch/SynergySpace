@@ -16,8 +16,7 @@
   
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-  <link rel='stylesheet' href='intro.css'>
-  <link rel='stylesheet' href='nav.css'>
+  <link rel='stylesheet' href='CSS/intro.css'>
 
 </head>
 
@@ -317,9 +316,8 @@
 <!-- Scripts -->
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-<script src="js\plugin\jquery.js"></script>
+<script src="js/plugin/jquery.js"></script>
+<script src="js/plugin/bootstrap.min.js"></script>
 <script src="js\scroll.js"></script>
 
 </body>	
