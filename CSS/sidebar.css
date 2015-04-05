@@ -15,22 +15,16 @@ background-color: #F1F1F1;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 26px;
-  	float:right;
+	padding-top: 10px;
   	color: #F1F1F1;
 }
 
-.nav_link {
-	cursor: pointer;
-	display: inline-block;
-	font-size: 26px;
-  	float:right;
-}
 
 .nav_link a {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 26px;
-  	float:right;
+	padding-top: 10px;
 	color: #F1F1F1;
 }
 
