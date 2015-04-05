@@ -22,9 +22,14 @@
 			$username = $_SESSION['username'];
 			$id=$_GET['id'];
 			if (empty($id)) {$id=$_POST['id'];} //Get b_id whether POST or GET method used
-			$query = pg_query("SET search_path TO synergy; INSERT INTO renting VALUES ('$username','$id');")
+			if ($_POST['method']==1) {
+				$query = "SET search_path TO synergy; INSERT INTO renting VALUES ('$username','$id');";
+			} else {
+				$query = "SET search_path TO synergy; DELETE FROM renting WHERE username='$username' AND b_id='$id';";
+			}
+			$result = pg_query($query)
 				or die('Query failed: ' . pg_last_error()); 
-			if($query) { 
+			if($result) { 
 				header("Location: http://synergyspace309.herokuapp.com/building.php?id=".$id);
 			} 
 		} 
@@ -60,11 +65,13 @@
 					if (pg_num_rows($r2)==0) { // user has not rented space
 						echo '<form action="building.php" method="post">
 						  <input type="hidden" name="id" value="'.$id.'"/>
+						  <input type="hidden" name="method" value="1"/>
 						  <button type="submit" name="submit"><span class="fa fa-plus"></span>Rent Space</button>
 						  </form>';
 					} else { // user has rented space
 						echo '<form action="building.php" method="post">
 						  <input type="hidden" name="id" value="'.$id.'"/>
+						  <input type="hidden" name="method" value="0"/>
 						  <button type="submit" name="submit"><span class="fa fa-minus"></span>Stop Renting Space</button>
 						  </form>';
 					}
