@@ -15,7 +15,6 @@ background-color: #F1F1F1;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 26px;
-	margin: 5px 20px 0 50px;
   	float:right;
   	color: #F1F1F1;
 }
@@ -24,7 +23,6 @@ background-color: #F1F1F1;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 26px;
-	margin: 5px 20px 0 50px;
   	float:right;
 }
 
@@ -32,15 +30,10 @@ background-color: #F1F1F1;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 26px;
-	margin: 5px 20px 0 50px;
   	float:right;
 	color: #F1F1F1;
 }
 
-.nav_link a:hover{
-
-	color: #F1F1F1;
-}
 
 .nav_link a:visited{
 
