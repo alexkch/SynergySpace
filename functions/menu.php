@@ -8,7 +8,7 @@ function defaultMenu () {
           
   <div class="col-md-2">
   <span class="nav_header">
-    <a href="/index.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
+    <a href="/home.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
   </span>
   </div>
 
@@ -33,17 +33,15 @@ function defaultMenu () {
 
         <div class="col-md-2">
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><span class="fa fa-question-circle"></span> FAQ</a></li>
+              <li><a href="index.php"><span class="fa fa-info-circle"></span> About Us</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> About Us</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i>Contact Us</a>
                   <ul class="dropdown-menu" role="menu">
                       <li><a href="#"><span class="fa fa-facebook-square"></span> Our Facebook</a></li>
                       <li><a href="#"><span class="fa fa-twitter-square"></span> Our Twitter</a></li>
                     <li><a href="#"><span class="fa fa-youtube-play"></span> Our Youtube</a></li>
                     <li class="divider"></li>
                     <li><a href="#"><span class="fa fa-envelope-o"></span> Contact Us</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><span class="fa fa-info-circle"></span> About Us</a></li>
                 </ul>
               </li>
           </ul>
@@ -61,7 +59,7 @@ function userMenu() {
           
 	<div class="col-md-2">
     <span class="nav_header">
-		<a href="/index.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
+		<a href="/home.php"><span class="fa fa-connectdevelop fa-2x"></span><span>SynergySpace</span></a>
 	  </span>
   </div>
 

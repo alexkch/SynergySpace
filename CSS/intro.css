@@ -92,7 +92,7 @@ body {
 .img2 {
     display: table;
     width: 100%;
-    height: 240px;
+    height: 250px;
     color: #fff;
     background: url(../img/3.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
