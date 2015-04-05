@@ -49,7 +49,7 @@
 				echo '<p>Country: '.$data->country.'</p>';
 				echo '<p>Capacity: '.$data->capacity.'</p>';
 				echo '<form action="building.php" method="get">
-						<input type="hidden" name="id" value="$id"/>
+						<input type="hidden" name="id" value="'.$id.'"/>
 						<button type="submit"><span class="fa fa-plus"></span>Rent Space</button>
 					</form>';
 				echo '</div>';
