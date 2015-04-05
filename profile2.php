@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For MOBILE -->
-<title>Profile - SynergySpace</title>
+<title>Profile2 - SynergySpace</title>
 
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> <!-- Google Font Import -->
 <link rel="stylesheet" href="CSS/font-awesome.min.css">
@@ -100,7 +100,7 @@ $username = $_SESSION['username'];
 															$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 															while ($data = pg_fetch_object($result)) {
 
-																echo '<article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">'
+																echo '<article class="white-panel"> <img class="prj" src="../css/img/placeholder.gif">';
 																echo '<span class="fa fa-building-o fa-2x"></span>';
 																echo '<h4><a href="/building.php?id='.$data->b_id.'">'.$data->address.'<span class="fa fa-building-o fa-2x"></span></h2></a></h4>';
 																echo '<p>City: '.$data->city.'</p>';
