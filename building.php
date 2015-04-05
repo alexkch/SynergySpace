@@ -27,7 +27,7 @@
 				header("Location: http://synergyspace309.herokuapp.com/building.php?id=".$id);
 			} 
 		} 
-		if(isset($_POST['submit'])) { postBuilding(); }
+		if(isset($_POST['submit'])) { rentBuilding(); }
 
 		// Closing connection
 		pg_close($dbconn);
@@ -36,11 +36,16 @@
 	<div id="info">
 		<?php
 			$id=$_GET['id'];
+			$username=$_SESSION['username'];
 			$dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
 				or die('Could not connect: ' . pg_last_error());
 			
 			$query = "SET search_path TO synergy; SELECT * FROM building WHERE b_id='$id'";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+			
+			$q2 = "SET search_path TO synergy; SELECT * FROM renting WHERE b_id='$id' AND username='$username'"
+			$r2 = pg_query($q2) or die('Query failed: ' . pg_last_error());
+			
 			while ($data = pg_fetch_object($result)) {
 				echo '<div class="building">';
 				echo '<span class="fa fa-building-o fa-2x"></span>';
@@ -48,10 +53,15 @@
 				echo '<p>City: '.$data->city.'</p>';
 				echo '<p>Country: '.$data->country.'</p>';
 				echo '<p>Capacity: '.$data->capacity.'</p>';
-				echo '<form action="building.php" method="get">
-						<input type="hidden" name="id" value="'.$id.'"/>
-						<button type="submit"><span class="fa fa-plus"></span>Rent Space</button>
-					</form>';
+				if (!empty($username)) {
+					echo '<form action="building.php" method="get">
+						  <input type="hidden" name="id" value="'.$id.'"/>
+						  <button type="submit">';
+						  if ($r2) {echo '<span class="fa fa-plus"></span>Rent Space';}
+						  else {echo '<span class="fa fa-minus"></span>Stop Renting Space';}
+					echo '</button>
+						  </form>';
+				}
 				echo '</div>';
 			}
 		?>
