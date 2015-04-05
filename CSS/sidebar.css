@@ -25,10 +25,15 @@ background-color: #F1F1F1;
 	display: inline-block;
 	font-size: 26px;
 	margin: 5px 20px 0 50px;
-  float:right;
+  	float:right;
 }
 
 .nav_link a {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 26px;
+	margin: 5px 20px 0 50px;
+  	float:right;
 	color: #F1F1F1;
 }
 
