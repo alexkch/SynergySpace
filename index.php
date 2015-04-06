@@ -65,9 +65,10 @@
                                 <i class="fa fa-globe fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name 1</strong>
+                                    <strong>Variety of workplaces</strong>
                                 </h4>
-                                <p>BLAH BLAH BLAH</p>
+                                <p>Want to work in Brazil when you're visiting? Want to work in an igloo up north? Want to find a place where you can peacefully code in
+                                the Sahara Desert? Look no further, our services are trusted all over the world!</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-8">
@@ -77,9 +78,9 @@
                                 <i class="fa fa-users fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Networking</strong>
                                 </h4>
-                                <p>text goes here</p>
+                                <p>Network with your peers all over the world. You may meet that future business partner or maybe even that special someone using OUR business</p>
 
                             </div>
                         </div>
@@ -90,9 +91,10 @@
                                 <i class="fa fa-smile-o fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Friendly Staff</strong>
                                 </h4>
-                                <p> and here</p>
+                                <p>At Synergy Space, we have the friendlest staff you will ever find. Can't Log in? You have unanswered questions about our site? Have some suggestions for our site?
+                                Look no further, our staff will be happy to assist in anyway possible</p>
 
                             </div>
                         </div>
