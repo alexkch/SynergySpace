@@ -52,9 +52,9 @@ if (!isset($username) || empty($username)) {
     pg_close($dbconn);
   ?>
 
-  <div class="container profile">
+  <div class="container padding1">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 padding2">
         <div class="well well-small clearfix">
           <div class="row">
             <div class="col-md-2">
