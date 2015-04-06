@@ -80,8 +80,8 @@ if (!isset($username) || empty($username)) {
                     echo '<div class="building">';
                     echo '<h2>'.$data->address.'</h2>';
                     echo '<ul class="list-unstyled">';
-                    echo '<li><i class="fa fa-globe"></i>'.$data->country.', '.$data->city.'</li>';
-                    echo '<li><i class="fa fa-users"></i>'.$data->capacity.'</li>';
+                    echo '<li><i class="fa fa-globe"></i>Location: '.$data->country.', '.$data->city.'</li>';
+                    echo '<li><i class="fa fa-users"></i>Capacity: '.$data->capacity.'</li>';
                     echo '</ul>';
                     echo '</div>';
                    
@@ -126,6 +126,7 @@ if (!isset($username) || empty($username)) {
       <div class="well">
           <div class="container">
             <div class="row">
+            	<h2> Network: </h2>
                     <?php
                       $id=$_GET['id'];
                       if (empty($id)) {$id=$_POST['id'];} //Get b_id whether POST or GET method used
