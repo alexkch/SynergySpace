@@ -27,7 +27,7 @@ function defaultMenu () {
               <div class="form-group">
                 <input type="text" class="form-control" name="q" placeholder="Search for new startups" style="width:500px;">
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default"><span class="fa fa-search"></span></button>
             </form>
         </div>
 
@@ -78,7 +78,7 @@ function userMenu() {
               <div class="form-group">
                 <input type="text" class="form-control" name="q" placeholder="Search for new startups" style="width:500px;">
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default"><span class="fa fa-search"></span></button>
             </form>
         </div>
 
