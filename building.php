@@ -126,7 +126,7 @@ if (!isset($username) || empty($username)) {
       <div class="well">
           <div class="container">
             <div class="row">
-            	<h2> Network: </h2>
+            	<h2> Tenants: </h2>
                     <?php
                       $id=$_GET['id'];
                       if (empty($id)) {$id=$_POST['id'];} //Get b_id whether POST or GET method used
