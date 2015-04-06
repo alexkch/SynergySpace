@@ -191,23 +191,3 @@ if (!isset($username) || empty($username)) {
 
 </html>
 
-
-    <p>Users renting this space:</p>
-    <?php
-      $id=$_GET['id'];
-      if (empty($id)) {$id=$_POST['id'];} //Get b_id whether POST or GET method used
-      $dbconn = pg_connect("host=ec2-107-20-244-39.compute-1.amazonaws.com dbname=ddn82pff17m8p9 user=vbbkmqgcbmprhj password=hgtlv6g35Sn0zxepyM-f7JKqK6") 
-        or die('Could not connect: ' . pg_last_error());
-      $username=$_SESSION['username'];
-      $query = "SET search_path TO synergy; SELECT * FROM renting,users WHERE b_id='$id' AND renting.username=users.username;";
-      $result = pg_query($query) or die('Query failed: ' . pg_last_error());
-      while ($data = pg_fetch_object($result)) {
-        echo '<div class="user">';
-        echo '<span class="fa fa-user"></span>';
-        echo '<p>'.$data->username.'</p>';
-        echo '<p>Email: '.$data->email.'</p>';
-        echo '<p>Birthdate: '.$data->birthdate.'</p>';
-        echo '<p>Gender: '.$data->gender.'</p>';
-        echo '</div>';
-      }
-    ?>
