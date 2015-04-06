@@ -143,11 +143,11 @@ if (!isset($username) || empty($username)) {
                                     <div class="avatar col-md-4">'
 
                       if (strcmp(strtoupper($data->gender), "M")) == 0) { // Logged in
-                      		echo '<img class="img-circle" src="http://bootdey.com/img/Content/user_3.jpg">'
+                      		echo '<img class="img-circle" src="img/um2.jpg">'
                       } 
 
                       else { 
-                        echo 'something went wrong';
+                        echo '<img class="img-circle" src="img/uf.jpg">'
                       }
                         echo '</div><div class="col-md-8">';
 
