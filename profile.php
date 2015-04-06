@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/profile.css"> <!-- Profile CSS Styling -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> 
 <link rel="stylesheet" type="text/css" href="CSS/sidebar.css"> <!-- BOOTSTRAP -->
-<link rel="stylesheet" type="text/css" href="CSS/newprofile.css"> <!-- CUSTOM -->
+<link rel="stylesheet" type="text/css" href="CSS/profile.css"> <!-- CUSTOM -->
 </head>
 
 <?php
