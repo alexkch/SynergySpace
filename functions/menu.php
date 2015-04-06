@@ -23,9 +23,9 @@ function defaultMenu () {
         </div>
 
         <div class="col-md-6">
-            <form class="navbar-form" role="search">
+            <form class="navbar-form" role="search" method="get" action="search.php">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search for new startups" style="width:500px;">
+                <input type="text" class="form-control" name="q" placeholder="Search for new startups" style="width:500px;">
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
@@ -74,9 +74,9 @@ function userMenu() {
         </div>
 
         <div class="col-md-6">
-            <form class="navbar-form" role="search">
+            <form class="navbar-form" role="search" method="get" action="search.php">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search for new startups" style="width:500px;">
+                <input type="text" class="form-control" name="q" placeholder="Search for new startups" style="width:500px;">
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
