@@ -167,6 +167,10 @@ if (!isset($username) || empty($username)) {
 
   </div>  <!-- End building page -->    
 
+</div>
+</div>
+
+<footer><a href="https://synergyspace309.herokuapp.com/">SynergySpace</a> is a coworking space rental and teaming to succeed service. &copy; 2015</footer>
 
 
 <!-- Nav bar -->
@@ -180,15 +184,13 @@ if (!isset($username) || empty($username)) {
     }
   ?>
 
-</div>
-</div>
-</body>
 
 
 <script src="js/plugin/jquery.js"></script>
 <script src="js/plugin/bootstrap.min.js"></script>
 <script src="js/sidebar.js"></script>
 <script src="js/profilemenu.js"></script>
+
 </body>
 
 </html>
