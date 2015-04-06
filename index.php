@@ -67,8 +67,8 @@
                                 <h4>
                                     <strong>Variety of workplaces</strong>
                                 </h4>
-                                <p>Want to work in Brazil when you're visiting? Want to work in an igloo up north? Want to find a place where you can peacefully code in
-                                the Sahara Desert? Look no further, our services are trusted all over the world!</p>
+                                <p>Want to work in Brazil when you're visiting? Want to work in an igloo up north? Want to find a place where you can peacefully read in
+                                the Sahara Desert? Look no further! Our services are trusted all over the world!</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-8">
@@ -80,7 +80,8 @@
                                 <h4>
                                     <strong>Networking</strong>
                                 </h4>
-                                <p>Network with your peers all over the world. You may meet that future business partner or maybe even that special someone using OUR business</p>
+                                <p>Network with your peers all over the world. Want to meet interesting people? At Synergy Space, you will be able to work with 
+                                a variety of different people, greatly expanding YOUR social network! You may meet that future business partner or maybe even that special someone using OUR business</p>
 
                             </div>
                         </div>
