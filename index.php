@@ -62,7 +62,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                                <i class="fa fa-globe fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
                                     <strong>Service Name 1</strong>
@@ -74,7 +74,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                                <i class="fa fa-users fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
                                     <strong>Service Name</strong>
@@ -87,7 +87,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-university fa-stack-1x text-primary"></i>
+                                <i class="fa fa-smile-o fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
                                     <strong>Service Name</strong>
