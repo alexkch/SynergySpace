@@ -78,11 +78,10 @@ if (!isset($username) || empty($username)) {
                   
                   while ($data = pg_fetch_object($result)) {
                     echo '<div class="building">';
-                    echo '<span class="fa fa-building-o fa-2x"></span>';
                     echo '<h2>'.$data->address.'</h2>';
                     echo '<ul class="list-unstyled">';
-                    echo '<li><i class="fa fa-globe fa-2x"></i>'.$data->country.', '.$data->city.'</li>';
-                    echo '<li><i class="fa fa-users fa-2x"></i>'.$data->capacity.'</li>';
+                    echo '<li><i class="fa fa-globe"></i>'.$data->country.', '.$data->city.'</li>';
+                    echo '<li><i class="fa fa-users"></i>'.$data->capacity.'</li>';
                     echo '</ul>';
                     echo '</div>';
                    
@@ -105,8 +104,8 @@ if (!isset($username) || empty($username)) {
                   }
                 ?>
 
-            </div>
             <div class="col-md-6">
+            <!--
             <ul class="list-inline stats">
                  <li>
                    <span>$275</span>
@@ -118,10 +117,9 @@ if (!isset($username) || empty($username)) {
                 </li>
 
             </ul>
-              <div><!--/span6-->
-              </div><!--/row-->
+            -->
         </div>
-        <!--Body content-->
+        <!--Body content--> 
       </div>
     </div>
         
@@ -143,11 +141,11 @@ if (!isset($username) || empty($username)) {
                       echo '<div class="avatar col-md-4">';
 
                       if ((strcmp(strtoupper($data->gender), "M")) == 0) { // Logged in
-                      		echo '<img class="img-circle" src="img/um2.jpg">';
+                      		echo '<img class="img-circle" src="img/uf.jpg">';
                       } 
 
                       else { 
-                        echo '<img class="img-circle" src="img/uf.jpg">';
+                        echo '<img class="img-circle" src="img/um2.jpg">';
                       }
                         echo '</div><div class="col-md-8">';
 
