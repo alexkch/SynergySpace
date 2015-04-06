@@ -141,7 +141,7 @@ if (!isset($username) || empty($username)) {
                       echo '<div class="row">';
                       echo '<div class="avatar col-md-4">';
 
-                      if ((strcmp(strtoupper($data->gender), "Female")) == 0) { // Logged in
+                      if ((strcmp(strtoupper($data->gender), "FEMALE")) == 0) { // Logged in
                       		echo '<img class="img-circle" src="img/uf.jpg">';
                       } 
 
