@@ -121,10 +121,7 @@ if (!isset($username) || empty($username)) {
 
 	            </row>
 	            </div>
-
-
-
-
+	            
 	    	 </div>                 
 			</div>
 		</div>
