@@ -138,14 +138,18 @@ if (!isset($username) || empty($username)) {
                       $result = pg_query($query) or die('Query failed: ' . pg_last_error());
                       while ($data = pg_fetch_object($result)) {
                        
-                        echo '<div class="user col-md-4">
+                      echo '<div class="user col-md-4">
                                 <div class="row">
-                                    <div class="avatar col-md-4">
-                                        <a href="#">
-                                            <img class="img-circle" src="http://bootdey.com/img/Content/user_3.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-8">';
+                                    <div class="avatar col-md-4">'
+
+                      if (strcmp(strtoupper($data->gender), "M")) == 0) { // Logged in
+                      		echo '<img class="img-circle" src="http://bootdey.com/img/Content/user_3.jpg">'
+                      } 
+
+                      else { 
+                        echo 'something went wrong';
+                      }
+                        echo '</div><div class="col-md-8">';
 
                         echo '<h4>'.$data->username.'</h4>';
                         echo '<p>Email: '.$data->email.'</p>';
