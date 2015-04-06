@@ -84,7 +84,7 @@ if (!isset($username) || empty($username)) {
 	                              <div class="panel panel-default">
 	                                  <div class="panel-heading">
 	                                    <h4 class="panel-title">
-	                                      <a href="#collpase1" data-toggle="collapse" data-parent="accordion">Buildings</a>
+	                                      <a href="#collpase1" data-toggle="collapse" data-parent="accordion">My Buildings</a>
 	                                    </h4>
 	                                </div>
 	                                  <div id="collpase1" class="panel-collapse collapse in">
