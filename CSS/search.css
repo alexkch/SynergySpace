@@ -57,6 +57,12 @@ aside button span:nth-child(2) {
 /**
  * General
  */
+section {
+	position: absolute;
+	top: 50px;
+	left: 250px; right: 0;
+	margin-bottom: 50px;
+}
 section a {
 	color: #303E73;
 	text-decoration: none;
