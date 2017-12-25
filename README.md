@@ -4,6 +4,6 @@ Leasing/Renting office space application
 
 Team Members:
 
-1) Bathalex
+1) Alex Bath
 2) Alex Chang
-3) Dongqing
+3) Q. Feng
